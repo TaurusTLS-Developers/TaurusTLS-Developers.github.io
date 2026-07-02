@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* Created with CSS HTML Validator (htmlvalidator.com) */
+/* Basic Reset */
+.emphasis {
+  font-weight: bold;
+}
+
+.navbar {
+    display: flex; /* Aligns logo and menu */
+    justify-content: space-between;
+    background-color: #1a1a2e;
+    padding: 15px 30px;
+    position: sticky; top: 0;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.nav-links a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: #00adb5; }
+.nav-links span {
+   vertical-align: middle;
+}
+
+.outlinedtable table {
+  border-collapse: collapse; /* Merges cell borders into a single line */
+  width: 100%;
+}
+
+.outlinedtable th, td {
+  border: 1px solid #ddd;    /* Sets a light gray, thin solid border */
+  padding: 8px;             /* Adds space inside the cells for readability */
+  text-align: left;
+}
+footer {
+    height: 300px;
+    width: 100%;
+}
+
+p.copyright {
+    text-align: center;
+    line-height: 40px;
+    font-size: 0.7em;
+}

@@ -1,13 +1,33 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="description" content="This is the home page for TaurusTLS.">
- <title>TaurusTLS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="This is the home page for TaurusTLS.">
+  <link rel="stylesheet" href="css/screen.css" media="screen">
+  <link rel="stylesheet" href="css/print.css" media="print">  
+  <title>About TaurusTLS</title>
 </head>
-
 <body>
-<p>Welcome to TaurusTLS.</p>
+<nav class="navbar" aria-label="Main Menu">
+  <ul class="nav-links">
+    <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt="" /></li>
+    <li><span>About</span></li>
+    <li><a href="download.html">Download</a></li>
+    <li><a href="donate.html">Donate</a></li>
+  </ul>
+</nav>
+<main>
+<h2>What is TaurusTLS</h2>
+<p>TaurusTLS provides <a href="https://www.openssl.org/">OpenSSL 3.x and 4.x</a> support for <a href="https://www.indyproject.org/">Indy - Internet Direct</a>.  It includes headers plus three components for <a href="https://www.embarcadero.com/products/delphi/"> Delphi</a>, <a href="https://www.embarcadero.com/products/cbuilder/">C++Builder</a>, and <a href="https://www.freepascal.org/">FreePascal</a>. Those components are:</p>
+<table class="outlinedtable">
+<tr><th scope="col">Component Nme</th><th scope="col">Description</th></tr>
+<tr><td>TTaurusTLSIOHandlerSocket</td><td>Enables TLS in a TIdTCPClientCustom descendant.</td></tr>
+<tr><td>TTaurusTLSServerIOHandler</td><td>Enables TLS in a TIdCustomTCPServer descendant.</td></tr>
+<tr><td>TTaurusTLSUnicodeLog</td><td>Triggers events when data is sent and received and data is provided in Unicode form if supported.</td></tr>
+</table>
+<p>TaurusTLS supports Android, iOS, Linux, OSX, and Windows including ARM64EC.</p>
+</main>
+<footer><p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p></footer>
 </body>
 </html>
