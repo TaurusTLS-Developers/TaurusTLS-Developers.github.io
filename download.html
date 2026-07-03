@@ -1,28 +1,67 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
- <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="description" content="This page points to where you can download TaurusTLS">
- <link rel="stylesheet" href="css/screen.css" media="screen">
- <link rel="stylesheet" href="css/print.css" media="print"> 
- <title>Download TaurusTLS</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="This page points to where you can download TaurusTLS">
+  <link rel="stylesheet" href="css/screen.css" media="screen">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <title>Download TaurusTLS</title>
 </head>
-
 <body>
-<nav class="navbar" aria-label="Main Menu">
-  <ul class="nav-links">
-    <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt="" /></li>
-    <li><a href="index.html"> About</a></li>
-    <li><span>Download</span></li>
-    <li><a href="donate.html">Donate</a></li>
-  </ul>
-</nav>
-<main>
-<p>TaurusTLS is available on GitHub at<br /><br /><a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases">https://github.com/TaurusTLS-Developers/TaurusTLS/releases</a></p>
-<p>We also provide pre-compiled OpenSSL binaries at<br /><br /> <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases</a></p>
-</main>
-<footer><p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p></footer>
+  <nav class="navbar" aria-label="Main Menu">
+    <ul class="nav-links">
+      <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt=""></li>
+      <li>
+        <a href="index.html">About</a>
+      </li>
+      <li><span>Download</span></li>
+      <li>
+        <a href="donate.html">Donate</a>
+      </li>
+    </ul>
+    <div class="hamburger">
+      <span></span> <span></span> <span></span>
+    </div>
+  </nav>
+  <main>
+    <p>TaurusTLS is available on GitHub at<br>
+    <br>
+    <a href=
+    "https://github.com/TaurusTLS-Developers/TaurusTLS/releases">https://github.com/TaurusTLS-Developers/TaurusTLS/releases</a></p>
+    <p>We also provide pre-compiled OpenSSL binaries at<br>
+    <br>
+    <a href=
+    "https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases</a></p>
+  </main>
+  <footer>
+    <nav class="social-media-links" aria-label="Social media links">
+      <ul>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers" target="_blank" rel="noopener noreferrer" aria-label=
+          "Visit our GitHub page"><img src="gfx/github.svg" alt="GitHub" class="social-icon" height="16" width="16"></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61582588996953" target="_blank" rel="noopener noreferrer"
+          aria-label="Visit our Facebook page"><img src="gfx/facebook.svg" alt="Facebook" class="social-icon" height="16"
+          width="16"></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/109619101" target="_blank" rel="noopener noreferrer" aria-label=
+          "Visit our LinkedIn page"><img src="gfx/linkedin.svg" alt="LinkedIn" class="social-icon" height="16" width="16"></a>
+        </li>
+      </ul>
+    </nav>
+    <p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p>
+  </footer>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

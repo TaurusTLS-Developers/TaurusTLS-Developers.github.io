@@ -5,29 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="This is the home page for TaurusTLS.">
   <link rel="stylesheet" href="css/screen.css" media="screen">
-  <link rel="stylesheet" href="css/print.css" media="print">  
+  <link rel="stylesheet" href="css/print.css" media="print">
   <title>About TaurusTLS</title>
 </head>
 <body>
-<nav class="navbar" aria-label="Main Menu">
-  <ul class="nav-links">
-    <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt="" /></li>
-    <li><span>About</span></li>
-    <li><a href="download.html">Download</a></li>
-    <li><a href="donate.html">Donate</a></li>
-  </ul>
-</nav>
-<main>
-<h2>What is TaurusTLS</h2>
-<p>TaurusTLS provides <a href="https://www.openssl.org/">OpenSSL 3.x and 4.x</a> support for <a href="https://www.indyproject.org/">Indy - Internet Direct</a>.  It includes headers plus three components for <a href="https://www.embarcadero.com/products/delphi/"> Delphi</a>, <a href="https://www.embarcadero.com/products/cbuilder/">C++Builder</a>, and <a href="https://www.freepascal.org/">FreePascal</a>. Those components are:</p>
-<table class="outlinedtable">
-<tr><th scope="col">Component Nme</th><th scope="col">Description</th></tr>
-<tr><td>TTaurusTLSIOHandlerSocket</td><td>Enables TLS in a TIdTCPClientCustom descendant.</td></tr>
-<tr><td>TTaurusTLSServerIOHandler</td><td>Enables TLS in a TIdCustomTCPServer descendant.</td></tr>
-<tr><td>TTaurusTLSUnicodeLog</td><td>Triggers events when data is sent and received and data is provided in Unicode form if supported.</td></tr>
-</table>
-<p>TaurusTLS supports Android, iOS, Linux, OSX, and Windows including ARM64EC.</p>
-</main>
-<footer><p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p></footer>
+  <nav class="navbar" aria-label="Main Menu">
+    <ul class="nav-links">
+      <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt=""></li>
+      <li><span>About</span></li>
+      <li>
+        <a href="download.html">Download</a>
+      </li>
+      <li>
+        <a href="donate.html">Donate</a>
+      </li>
+    </ul>
+    <div class="hamburger">
+      <span></span> <span></span> <span></span>
+    </div>
+  </nav>
+  <main>
+    <h2>What is TaurusTLS</h2>
+    <p>TaurusTLS provides <a href="https://www.openssl.org/">OpenSSL 3 and 4</a> support to the <a href=
+    "https://www.indyproject.org/">Internet Direct (Indy)</a> component set. TaurusTLS is freely available under an Open Source
+    license (Modified BSD) or MPL (Mozilla Public License) 1.1 allowing you to use it in your commercial projects. TaurusTLS is
+    available for the following platforms:</p>
+    <ul>
+      <li>Android</li>
+      <li>iOS</li>
+      <li>Linux</li>
+      <li>OSX</li>
+      <li>Windows including ARM64EC</li>
+    </ul>
+    <p>Both <a href="https://www.embarcadero.com/products/rad-studio/">RAD Studio</a> and <a href=
+    "https://www.freepascal.org/">FreePascal</a> are supported. It includes headers plus components. Those components are:</p>
+    <table class="outlinedtable">
+      <tr>
+        <th scope="col">Component Nme</th>
+        <th scope="col">Description</th>
+      </tr>
+      <tr>
+        <td>TTaurusTLSIOHandlerSocket</td>
+        <td>Enables TLS in a TIdTCPClientCustom descendant.</td>
+      </tr>
+      <tr>
+        <td>TTaurusTLSServerIOHandler</td>
+        <td>Enables TLS in a TIdCustomTCPServer descendant.</td>
+      </tr>
+      <tr>
+        <td>TTaurusTLSUnicodeLog</td>
+        <td>Triggers events when data is sent and received and data is provided in Unicode form if supported.</td>
+      </tr>
+    </table>
+    <h2>Why TaurusTLS</h2>
+    <p>TaurusTLS is designed to replace Indy's old OpenSSL support. Indy's OpenSSL support is limited to supporting OpenSSL
+    1.0.2 meaning the following:</p>
+    <ul>
+      <li>OpenSSL 1.0.2 reached its end of life in 2019 with no public updates since then.</li>
+      <li>OpenSSL 1.0.2 does NOT support the TLS 1.3 protocol which is the current standard.</li>
+    </ul>
+    <p>In Addition, TaurusTLS offers the following features</p>
+    <ul>
+      <li>Virtual hosting where each domain has its own certificate</li>
+      <li>Security Levels where connections are rejected based upon cipher strength or a criterion you use.</li>
+    </ul>
+  </main>
+  <footer>
+    <nav class="social-media-links" aria-label="Social media links">
+      <ul>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers" target="_blank" rel="noopener noreferrer" aria-label=
+          "Visit our GitHub page"><img src="gfx/github.svg" alt="GitHub" class="social-icon" height="16" width="16"></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61582588996953" target="_blank" rel="noopener noreferrer"
+          aria-label="Visit our Facebook page"><img src="gfx/facebook.svg" alt="Facebook" class="social-icon" height="16"
+          width="16"></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/109619101" target="_blank" rel="noopener noreferrer" aria-label=
+          "Visit our LinkedIn page"><img src="gfx/linkedin.svg" alt="LinkedIn" class="social-icon" height="16" width="16"></a>
+        </li>
+      </ul>
+    </nav>
+    <p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p>
+  </footer>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

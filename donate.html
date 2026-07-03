@@ -1,33 +1,72 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="description" content="This page gies information about donating to TaurusTLS Developers.">
- <link rel="stylesheet" href="css/screen.css" media="screen">
- <link rel="stylesheet" href="css/print.css" media="print">
- <title>Donate to TaurusTLS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="This page gies information about donating to TaurusTLS Developers.">
+  <link rel="stylesheet" href="css/screen.css" media="screen">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <title>Donate to TaurusTLS</title>
 </head>
-
 <body>
-<nav class="navbar" aria-label="Main Menu">
-  <ul class="nav-links">
-    <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt="" /></li>
-    <li><a href="index.html">About</a></li>
-    <li><a href="download.html">Download</a></li>
-    <li><span>Donate</span></li>
-  </ul>
-</nav>
-<main>
-<p>TaurusTLS is—and will always remain—a 100% free, open-source project. Up until now, the out-of-pocket costs required to maintain the library have been covered personally by the maintainers. Setting up an <a href="https://opencollective.com/TaurusTLS-Developers">OpenCollective</a> gives our community a transparent way to help sustain the project financially.</p>
+  <nav class="navbar" aria-label="Main Menu">
+    <ul class="nav-links">
+      <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt=""></li>
+      <li>
+        <a href="index.html">About</a>
+      </li>
+      <li>
+        <a href="download.html">Download</a>
+      </li>
+      <li><span>Donate</span></li>
+    </ul>
+    <div class="hamburger">
+      <span></span> <span></span> <span></span>
+    </div>
+  </nav>
+  <main>
+    <p>TaurusTLS is—and will always remain—a 100% free, open-source project. Up until now, the out-of-pocket costs required to
+    maintain the library have been covered personally by the maintainers. Setting up an <a href=
+    "https://opencollective.com/TaurusTLS-Developers">OpenCollective</a> gives our community a transparent way to help sustain
+    the project financially.</p>
+    <p>All funds collected will be used strictly to cover project infrastructure and code-quality expenses, such as:</p>
+    <ul>
+      <li>Website and documentation hosting</li>
+      <li>Purchasing necessary development, testing, or profiling tools</li>
+    </ul>
+    <p><span class="emphasis">A note on transparency</span>: Financial support is entirely voluntary. You do not need to donate
+    to use TaurusTLS, and contributing financially does not grant special consideration or expedited feature requests. Whether
+    you support us through code contributions, bug reports, or a cup of coffee on <a href=
+    "https://opencollective.com/TaurusTLS-Developers">OpenCollective</a>, we deeply appreciate you being part of the TaurusTLS
+    community!</p>
+  </main>
+  <footer>
+    <nav class="social-media-links" aria-label="Social media links">
+      <ul>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers" target="_blank" rel="noopener noreferrer" aria-label=
+          "Visit our GitHub page"><img src="gfx/github.svg" alt="GitHub" class="social-icon" height="16" width="16"></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61582588996953" target="_blank" rel="noopener noreferrer"
+          aria-label="Visit our Facebook page"><img src="gfx/facebook.svg" alt="Facebook" class="social-icon" height="16"
+          width="16"></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/109619101" target="_blank" rel="noopener noreferrer" aria-label=
+          "Visit our LinkedIn page"><img src="gfx/linkedin.svg" alt="LinkedIn" class="social-icon" height="16" width="16"></a>
+        </li>
+      </ul>
+    </nav>
+    <p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p>
+  </footer>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-<p>All funds collected will be used strictly to cover project infrastructure and code-quality expenses, such as:</p>
-<ul>
-<li>Website and documentation hosting</li>
-<li>Purchasing necessary development, testing, or profiling tools</li>
-</ul>
-<p><span class="emphasis">A note on transparency</span>: Financial support is entirely voluntary. You do not need to donate to use TaurusTLS, and contributing financially does not grant special consideration or expedited feature requests. Whether you support us through code contributions, bug reports, or a cup of coffee on <a href="https://opencollective.com/TaurusTLS-Developers"> OpenCollective</a>, we deeply appreciate you being part of the TaurusTLS community!</p>
-</main>
-<footer><p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p></footer>
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

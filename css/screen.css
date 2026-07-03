@@ -1,32 +1,74 @@
 @charset "UTF-8";
 
 /* Created with CSS HTML Validator (htmlvalidator.com) */
-/* Basic Reset */
-.emphasis {
-  font-weight: bold;
+
+body {
+  background-color: #FFFFE4;  
+  color: #654321;  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-    display: flex; /* Aligns logo and menu */
-    justify-content: space-between;
-    background-color: #1a1a2e;
-    padding: 15px 30px;
-    position: sticky; top: 0;
-}
-.nav-links {
+a {color: #D2691E;}
+
+nav {
     display: flex;
-    list-style: none;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D2691E;
+    padding: 0.5em 1em;
+    color: #F4A460;
 }
-.nav-links a {
-    vertical-align: middle;
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;  
+}
+nav ul a {
     text-decoration: none;
-    color: #fff;
+    color: #4E3524;
+    background-color: #f0f0f0;
     transition: color 0.3s;
 }
-.nav-links a:hover { color: #00adb5; }
-.nav-links span {
-   vertical-align: middle;
+nav ul a:hover {
+    color: #D2691E;
+    background-color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #D2691E;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }
 
 .outlinedtable table {
@@ -35,17 +77,67 @@
 }
 
 .outlinedtable th, td {
-  border: 1px solid #ddd;    /* Sets a light gray, thin solid border */
+  border: 1px solid #F4A460;    
   padding: 8px;             /* Adds space inside the cells for readability */
   text-align: left;
 }
+
 footer {
-    height: 300px;
-    width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
 }
 
-p.copyright {
-    text-align: center;
-    line-height: 40px;
-    font-size: 0.7em;
+footer nav {
+  background-color: #FFFFE4;  
+  color: #654321; 
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer p {
+  margin: 0;
+}
+/* Base styles for social media icons container */
+.social-media-links {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.social-media-links li {
+    display: inline-block;
+}
+
+.social-media-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; /* Minimum touch target size */
+    height: 44px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.social-media-links img,
+.social-media-links svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+/* Sophisticated hover effects */
+.social-media-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.social-media-links a:hover img {
+    transform: scale(1.1);
 }
