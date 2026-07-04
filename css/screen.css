@@ -10,17 +10,20 @@ body {
 
 .skip {
   position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  top: -100px; /* Moves it completely out of view */
+  left: 0;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 24px;
+  z-index: 99999; /* Ensures it sits on top of all headers */
+  font-weight: bold;
+  text-decoration: none;
+  transition: top 0.2s ease-in-out;
 }
 
 .skip:focus {
-  position: static;
-  width: auto;
-  height: auto;
+  top: 0; /* Brings it down to the top of the browser window */
+  outline: 3px solid #ffcc00; /* High contrast focus indicator */
 }
 
 a {color: #753a0f;}
