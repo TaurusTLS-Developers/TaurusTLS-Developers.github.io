@@ -23,6 +23,10 @@
     padding: 0 !important;
   }
 
+h1, h2 {
+  text-align: center;
+}
+
   /* 3. Append destination URLs next to anchor links */
   a::after {
     content: " (" attr(href) ")";
