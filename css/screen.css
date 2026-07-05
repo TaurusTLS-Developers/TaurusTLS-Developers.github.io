@@ -47,7 +47,7 @@ nav ul {
   gap: 1em;
   margin: 0;  
 }
-nav li {
+nav ul li {
     min-width: 44px; 
     min-height: 44px;
 }
@@ -82,7 +82,7 @@ nav ul a:hover {
     nav ul {
         display: none;
         flex-direction: column;
-        background-color: #D2691E;
+        background-color: #dd8c52;
         position: absolute;
         top: 50px;
         right: 0;
