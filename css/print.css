@@ -26,7 +26,10 @@
 h1, h2 {
   text-align: center;
 }
-
+  a {
+    color: #000;
+  }
+  
   /* 3. Append destination URLs next to anchor links */
   a::after {
     content: " (" attr(href) ")";
