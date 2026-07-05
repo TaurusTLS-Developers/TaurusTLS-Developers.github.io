@@ -63,3 +63,7 @@ h1, h2 {
   text-align: left;
 }
 
+.links-list {
+  list-style: none; /* Remove bullets */
+  text-align: center; /* Centers inline/inline-block elements */
+}

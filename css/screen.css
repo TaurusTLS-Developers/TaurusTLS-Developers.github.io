@@ -118,6 +118,11 @@ nav ul a:hover {
   text-align: left;
 }
 
+.links-list {
+  list-style: none; /* Remove bullets */
+  text-align: center; /* Centers inline/inline-block elements */
+}
+
 footer {
   text-align: center;
   padding: 10px;
