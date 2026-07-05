@@ -5,10 +5,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content=
-  "TaurusTLS is an OpenSSL wrapper that provides Internet Direct (Indy) with OpenSSL 3 and 4 support." />
+  "TaurusTLS links to various websites that are relevent to development." />
   <meta property="og:title" content="About TaurusTLS" />
   <meta property="og:url" content="https://taurustls.org/" />
-  <meta property="og:description" content="Information about TaurusTLS, what it is and why you need it." />
+  <meta property="og:description" content="TaurusTLS links to various websites that are relevent to development" />
   <meta property="og:image" content="https://taurustls.org/gfx/TaurusTLS.png" />
   <link rel="icon" type="image/x-icon" href="gfx/favicon.ico" />
   <link rel="canonical" href="https://taurustls.org/" />
@@ -22,7 +22,7 @@
       <p class="skip"><a href="#main">Skip to main content</a></p>
       <ul class="nav-links">
         <li><img class="logo" src="gfx/TaurusTLS.png" height="77" width="77" alt="" /></li>
-        <li><span>About</span></li>
+        <li><a href="index.html">About</a></li>
         <li>
           <a href="download.html">Download</a>
         </li>
@@ -33,7 +33,7 @@
           <a href="contactus.html">Contact Us</a>
         </li>
         <li>
-          <a href="links.html">Links</a>
+          <span>Links</span>
         </li>
       </ul>
       <div class="hamburger">
@@ -42,53 +42,40 @@
     </nav>
   </header>
   <main id="main">
-    <h1>About TaurusTLS</h1>
-    <h2>What is TaurusTLS</h2>
-    <p>TaurusTLS provides <a href="https://www.openssl.org/">OpenSSL 3 and 4</a> support to the <a href=
-    "https://github.com/IndySockets/Indy">Internet Direct (Indy)</a> component set. TaurusTLS is freely available under an Open
-    Source license (Modified BSD) or MPL (Mozilla Public License) 1.1 allowing you to use it in your commercial projects.
-    TaurusTLS is available for the following platforms:</p>
+    <h1>TaurusTLS Links</h1>
+    <h2>The Basis of TaurusTLS</h2>
     <ul>
-      <li>Android</li>
-      <li>iOS</li>
-      <li>Linux</li>
-      <li>OSX</li>
-      <li>Windows including ARM64EC</li>
+      <li><a href="https://github.com/IndySockets/Indy">Internet Direct (Indy)</a></li>
     </ul>
-    <p>Both <a href="https://www.embarcadero.com/products/rad-studio/">RAD Studio</a> from Seattle to Florence and <a href=
-    "https://www.freepascal.org/">FreePascal</a> are supported. It includes headers plus components.</p>
-    <table class="outlinedtable">
-      <caption>
-        Components and their descriptions
-      </caption>
-      <tr>
-        <th scope="col">Component Name</th>
-        <th scope="col">Description</th>
-      </tr>
-      <tr>
-        <td>TTaurusTLSIOHandlerSocket</td>
-        <td>Enables TLS in a TIdTCPClientCustom descendant.</td>
-      </tr>
-      <tr>
-        <td>TTaurusTLSServerIOHandler</td>
-        <td>Enables TLS in a TIdCustomTCPServer descendant.</td>
-      </tr>
-      <tr>
-        <td>TTaurusTLSUnicodeLog</td>
-        <td>Triggers events when data is sent and received and data is provided in Unicode form if supported.</td>
-      </tr>
-    </table>
-    <h2>Why TaurusTLS</h2>
-    <p>TaurusTLS is designed to replace Indy's old OpenSSL support. Indy's OpenSSL support is limited to supporting OpenSSL
-    1.0.2 meaning the following:</p>
+    <h2>Developer IDE's We Support</h2>
     <ul>
-      <li>OpenSSL 1.0.2 reached its end of life in 2019 with no public updates since then.</li>
-      <li>OpenSSL 1.0.2 does NOT support the TLS 1.3 protocol which is the current standard.</li>
+      <li><a href="https://www.freepascal.org/">FreePascal</a></li>
+      <li><a href="https://www.lazarus-ide.org/">Lazarus</a></li>
+      <li><a href="https://www.embarcadero.com/products/rad-studio">RAD Studio</a></li>
+    </ul>    
+    <h2>Software we use to Develop TaurusTLS</h2>
+    <ul>
+      <li><a href="https://www.scootersoftware.com/">Beyond Compare</a></li>
+      <li><a href="https://www.deleaker.com/">Deleaker</a></li>
+      <li><a href="https://devjetsoftware.com/products/documentation-insight/">DocInsight</a></li>
+      <li><a href="https://peganza.com/products_pal.html">Pascal Analyzer</a></li>
+      <li><a href="https://www.tmssoftware.com/site/fixinsight.asp">TMS FixInsight</a></li>
     </ul>
-    <p>In Addition, TaurusTLS offers the following features</p>
+    <h2>Articles and Videos about TaurusTLS</h2>
     <ul>
-      <li>Virtual hosting where each domain has its own certificate</li>
-      <li>Security Levels where connections are rejected based upon cipher strength or a specific criterion.</li>
+      <li><a href="https://www.tmssoftware.com/site/blog.asp?post=2457">Enabling TLS 1.3 in TMS MQTT and TMS FNC Products</a></li>
+      <li><a href="https://www.youtube.com/watch?v=Rw_8oZa-IIs">How to send email via GMail and Google Workspace (formerly G Suite)</a></li>
+      <li><a href="https://www.delphi.cz/post/TaurusTLS-Indy-Delphi-TLS13.aspx">TaurusTLS jako rozšíření Indy o TLS 1.3</a></li>
+      <li><a href="https://www.patreon.com/delphimvcframework/posts/tls-1-3-and-13-138720673">TLS 1.3 and Delphi 13 Support in DelphiMVCFramework!</a></li>
+      <li><a href="https://www.youtube.com/watch?v=PmWHjQ-Ja14">What Is Taurus TLS?</a></li>
+    </ul>
+    <h2>Software that Uses TaurusTLS</h2>
+    <ul>
+      <li><a href="https://github.com/GDKsoftware/Delphi-MCP-Server">Delphi-MCP-Server</a></li>
+      <li><a href="https://github.com/lminuti/Delphi-OpenSSL">Delphi-OpenSSL</a></li>
+      <li><a href="https://github.com/cesarliws/dext">Dext</a></li>
+      <li><a href="https://github.com/danieleteti/delphimvcframework">DMVCFramework</a></li>
+      <li><a href="https://www.embarcadero.com/products/rad-studio">RAD Server Lite</a></li>
     </ul>
   </main>
   <footer>
