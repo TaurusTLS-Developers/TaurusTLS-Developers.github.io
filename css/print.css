@@ -2,68 +2,91 @@
 
 /* Created with CSS HTML Validator (htmlvalidator.com) */
 
-  /* 1. Hide non-essential layout elements */
-  nav, footer, sidebar, .no-print, .social-share, .ads {
-    display: none !important;
-  }
+/* 1. Hide non-essential layout elements */
+nav,
+footer,
+sidebar,
+.no-print,
+.social-share,
+.ads {
+  display: none !important;
+}
 
-  /* 2. Reset page structure for paper boundaries */
-  body {
-    background: white !important;
-    color: black !important;
-    font-size: 12pt;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-  }
+/* 2. Reset page structure for paper boundaries */
+body {
+  background: white !important;
+  color: black !important;
+  font-size: 12pt;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
 
-  main, article {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+main,
+article {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
-  a {
-    color: #000;
-  }
-  
-  /* 3. Append destination URLs next to anchor links */
-  a::after {
-    content: " (" attr(href) ")";
-    font-size: 10pt;
-    color: #555;
-  }
 
-  /* Do not print internal fragment identifiers or javascript links */
-  a[href^="#"]::after, a[href^="javascript:"]::after {
-    content: "";
-  }
+a {
+  color: #000;
+}
 
-  /* 4. Manage page-breaking mechanics */
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
+/* 3. Append destination URLs next to anchor links */
+a::after {
+  content: " ("attr(href) ")";
+  font-size: 10pt;
+  color: #555;
+}
 
-  img, table, blockquote, tr {
-    page-break-inside: avoid;
-  }
+/* Do not print internal fragment identifiers or javascript links */
+a[href^="#"]::after,
+a[href^="javascript:"]::after {
+  content: "";
+}
+
+/* 4. Manage page-breaking mechanics */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+img,
+table,
+blockquote,
+tr {
+  page-break-inside: avoid;
+}
 
 .outlinedtable table {
-  border-collapse: collapse; /* Merges cell borders into a single line */
+  border-collapse: collapse;
+  /* Merges cell borders into a single line */
   width: 100%;
 }
 
-.outlinedtable th, td {
-  border: 1px solid #ddd;    /* Sets a light gray, thin solid border */
-  padding: 8px;             /* Adds space inside the cells for readability */
+.outlinedtable th,
+td {
+  border: 1px solid #ddd;
+  /* Sets a light gray, thin solid border */
+  padding: 8px;
+  /* Adds space inside the cells for readability */
   text-align: left;
 }
 
 .links-list {
-  list-style: none; /* Remove bullets */
-  text-align: center; /* Centers inline/inline-block elements */
+  list-style: none;
+  /* Remove bullets */
+  text-align: center;
+  /* Centers inline/inline-block elements */
 }

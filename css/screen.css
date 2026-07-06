@@ -3,121 +3,132 @@
 /* Created with CSS HTML Validator (htmlvalidator.com) */
 
 body {
-  background-color: #FFFFE4;  
-  color: #654321;  
+  background-color: #FFFFE4;
+  color: #654321;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
 
 .skip {
-position: absolute;
-left: -9999px;
-z-index: 999;
-padding: 1em;
-background-color: #000;
-color: #FFF;
-opacity: 0;
- }
- .skip:focus {
-left: 50%;
-transform: translateX(-50%);
-opacity: 1;
- }
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: #000;
+  color: #FFF;
+  opacity: 0;
+}
 
-a {color: #753a0f;}
+.skip:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+a {
+  color: #753a0f;
+}
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #19110b;
-    background-color: #dd8c52;
-    padding: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #19110b;
+  background-color: #dd8c52;
+  padding: 0.5em 1em;
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
   gap: 1em;
-  margin: 0;  
-}
-nav ul li span{
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
+  margin: 0;
 }
 
-nav ul li a{
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
+nav ul li span {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 nav ul a {
-    text-decoration: none;
-    color: #4E3524;
-    background-color: #f0f0f0;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #4E3524;
+  background-color: #f0f0f0;
+  transition: color 0.3s;
 }
+
 nav ul a:hover {
-    color: #D2691E;
-    background-color: #FFFFFF;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  color: #D2691E;
+  background-color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
+  width: 25px;
+  height: 3px;
+  background-color: white;
 }
 
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #dd8c52;
-        position: absolute;
-        top: 50px;
-        right: 0;
-        width: 100%;
-    }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #dd8c52;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+  }
 
-    nav ul.active {
-        display: flex;
-    }
+  nav ul.active {
+    display: flex;
+  }
 
-    .hamburger {
-        display: flex;
-    }
+  .hamburger {
+    display: flex;
+  }
 }
 
 .outlinedtable table {
-  border-collapse: collapse; /* Merges cell borders into a single line */
+  border-collapse: collapse;
+  /* Merges cell borders into a single line */
   width: 100%;
 }
 
-.outlinedtable th, td {
-  border: 1px solid #F4A460;    
-  padding: 8px;             /* Adds space inside the cells for readability */
+.outlinedtable th,
+td {
+  border: 1px solid #F4A460;
+  padding: 8px;
+  /* Adds space inside the cells for readability */
   text-align: left;
 }
 
 .links-list {
-  list-style: none; /* Remove bullets */
-  text-align: center; /* Centers inline/inline-block elements */
+  list-style: none;
+  /* Remove bullets */
+  text-align: center;
+  /* Centers inline/inline-block elements */
 }
 
 footer {
@@ -127,8 +138,8 @@ footer {
 }
 
 footer nav {
-  background-color: #FFFFE4;  
-  color: #654321; 
+  background-color: #FFFFE4;
+  color: #654321;
 }
 
 footer ul {
@@ -138,44 +149,46 @@ footer ul {
 footer p {
   margin: 0;
 }
+
 /* Base styles for social media icons container */
 .social-media-links {
-    display: flex;
-    gap: 1rem;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .social-media-links li {
-    display: inline-block;
+  display: inline-block;
 }
 
 .social-media-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px; /* Minimum touch target size */
-    height: 44px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  /* Minimum touch target size */
+  height: 44px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
 }
 
 .social-media-links img,
 .social-media-links svg {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
 }
 
 /* Sophisticated hover effects */
 .social-media-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .social-media-links a:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
