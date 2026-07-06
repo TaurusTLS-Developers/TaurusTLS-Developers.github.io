@@ -13,22 +13,19 @@ h1, h2 {
 }
 
 .skip {
-  position: absolute;
-  top: -100px; /* Moves it completely out of view */
-  left: 0;
-  background-color: #FFFFFF;
-  color: #000000;
-  padding: 12px 24px;
-  z-index: 99999; /* Ensures it sits on top of all headers */
-  font-weight: bold;
-  text-decoration: none;
-  transition: top 0.2s ease-in-out;
-}
-
-.skip:focus {
-  top: 0; /* Brings it down to the top of the browser window */
-  outline: 3px solid #ffcc00; /* High contrast focus indicator */
-}
+position: absolute;
+left: -9999px;
+z-index: 999;
+padding: 1em;
+background-color: #000;
+color: #FFF;
+opacity: 0;
+ }
+ .skip:focus {
+left: 50%;
+transform: translateX(-50%);
+opacity: 1;
+ }
 
 a {color: #753a0f;}
 
