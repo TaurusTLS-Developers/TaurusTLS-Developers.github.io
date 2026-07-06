@@ -22,15 +22,13 @@ h2 {
   left: -9999px;
   z-index: 999;
   padding: 1em;
-  background-color: #000;
-  color: #FFF;
-  opacity: 0;
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 .skip:focus {
   left: 50%;
   transform: translateX(-50%);
-  opacity: 1;
 }
 
 a {
