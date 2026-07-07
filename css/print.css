@@ -5,6 +5,7 @@
 /* 1. Hide non-essential layout elements */
 nav,
 footer,
+aside,
 sidebar,
 .skip,
 .no-print,
