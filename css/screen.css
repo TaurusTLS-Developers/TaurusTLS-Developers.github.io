@@ -68,6 +68,7 @@ h2 {
   font-size: clamp(1.35rem, 3.5vw, 1.75rem);
   margin-top: 2em;
   color: var(--text);
+  background-color: var(--bg);
   border-bottom: 2px solid var(--accent);
   padding-bottom: 0.25em;
 }
@@ -78,12 +79,14 @@ p {
 
 a {
   color: var(--accent-dark);
+  background-color: var(--bg);
   text-decoration: none;
   transition: color var(--transition);
 }
 
 a:hover {
   color: var(--accent);
+  background-color: var(--bg);
   text-decoration: underline;
 }
 
@@ -156,6 +159,7 @@ nav.navbar {
   padding: 0.55rem 1rem;
   border-radius: 8px;
   color: var(--nav-text);
+  background-color: var(--nav-bg);
   font-weight: 500;
   transition: background-color var(--transition), color var(--transition);
 }
