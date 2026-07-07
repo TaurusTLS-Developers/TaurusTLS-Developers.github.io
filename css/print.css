@@ -71,17 +71,18 @@ tr {
 
 .outlinedtable table {
   border-collapse: collapse;
-  /* Merges cell borders into a single line */
   width: 100%;
 }
 
 .outlinedtable th,
-td {
-  border: 1px solid #ddd;
-  /* Sets a light gray, thin solid border */
+.outlinedtable td {
+  border: 1px solid #ccc;
   padding: 8px;
-  /* Adds space inside the cells for readability */
   text-align: left;
+}
+
+.outlinedtable th {
+  background: #f0f0f0;
 }
 
 .links-list {

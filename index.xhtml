@@ -41,21 +41,21 @@
   </header>
   <main id="main">
     <h1>About TaurusTLS</h1>
-    <h2>What is TaurusTLS</h2>
-    <p>TaurusTLS provides <a href="https://www.openssl.org/">OpenSSL 3 and 4</a> support to the <a href=
-    "https://github.com/IndySockets/Indy">Internet Direct (Indy)</a> component set. TaurusTLS is freely available under your
-    choice between a <a href="license/Modified_BSD_LICENSE.md">Modified BSD</a> or <a href="license/LICENSE_MPL_1_1.txt">MPL (Mozilla Public
-    License) 1.1</a> allowing you to use it in your commercial projects. TaurusTLS is available for the following
-    platforms:</p>
-    <ul>
+
+    <p class="lead">TaurusTLS brings modern <a href="https://www.openssl.org/">OpenSSL 3 and 4</a> support to the <a href="https://github.com/IndySockets/Indy">Internet Direct (Indy)</a> component set. It is freely available under the <a href="license/Modified_BSD_LICENSE.md">Modified BSD</a> or <a href="license/LICENSE_MPL_1_1.txt">MPL 1.1</a> license.</p>
+
+    <h2>Platforms</h2>
+    <ul class="platforms">
       <li>Android</li>
       <li>iOS</li>
       <li>Linux</li>
-      <li>OSX</li>
-      <li>Windows including ARM64EC</li>
+      <li>macOS</li>
+      <li>Windows (including ARM64EC)</li>
     </ul>
+
+    <h2>Supported Compilers</h2>
     <p>TaurusTLS supports the following <a href="https://www.embarcadero.com/products/rad-studio/">RAD Studio</a> versions:</p>
-    <ul>
+    <ul class="platforms">
       <li>Delphi 10 Seattle</li>
       <li>Delphi 10.1 Berlin</li>
       <li>Delphi 10.2 Tokyo</li>
@@ -65,39 +65,43 @@
       <li>Delphi 12 Athens</li>
       <li>Delphi 13 Florence</li>
     </ul>
-    <p>In addition, <a href=
-    "https://www.freepascal.org/">FreePascal</a> including the <a href="https://www.lazarus-ide.org/">Lazarus IDE</a> are supported.</p>
-    <p>In addition to header files, TaurusTLS includes the following components:</p>
-    <table class="outlinedtable">
-      <caption>Components</caption>
-      <tr>
-        <th scope="col">Component Name</th>
-        <th scope="col">Description</th>
-      </tr>
-      <tr>
-        <td>TTaurusTLSIOHandlerSocket</td>
-        <td>Enables TLS in a TIdTCPClientCustom descendant.</td>
-      </tr>
-      <tr>
-        <td>TTaurusTLSServerIOHandler</td>
-        <td>Enables TLS in a TIdCustomTCPServer descendant.</td>
-      </tr>
-      <tr>
-        <td>TTaurusTLSUnicodeLog</td>
-        <td>Triggers events when data is sent and received and data is provided in Unicode form if supported.</td>
-      </tr>
-    </table>
-    <h2>Why TaurusTLS</h2>
-    <p>TaurusTLS is designed to replace Indy's old OpenSSL support. Indy's OpenSSL support is limited to supporting OpenSSL
-    1.0.2 meaning the following:</p>
+    <p>Also fully supported: <a href="https://www.freepascal.org/">FreePascal</a> + <a href="https://www.lazarus-ide.org/">Lazarus IDE</a>.</p>
+
+    <h2>Components</h2>
+    <div class="outlinedtable">
+      <table>
+        <caption>TaurusTLS Components</caption>
+        <thead>
+          <tr>
+            <th scope="col">Component</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>TTaurusTLSIOHandlerSocket</code></td>
+            <td>Enables TLS in a <code>TIdTCPClientCustom</code> descendant.</td>
+          </tr>
+          <tr>
+            <td><code>TTaurusTLSServerIOHandler</code></td>
+            <td>Enables TLS in a <code>TIdCustomTCPServer</code> descendant.</td>
+          </tr>
+          <tr>
+            <td><code>TTaurusTLSUnicodeLog</code></td>
+            <td>Triggers events for sent/received data in Unicode form when supported.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why TaurusTLS?</h2>
+    <p>TaurusTLS replaces Indy&#8217;s legacy OpenSSL 1.0.2 support, which reached end-of-life in 2019 and lacks TLS 1.3.</p>
+
+    <h2>Key Features</h2>
     <ul>
-      <li>OpenSSL 1.0.2 reached its end of life in 2019 with no public updates since then.</li>
-      <li>OpenSSL 1.0.2 does NOT support the TLS 1.3 protocol which is the current standard.</li>
-    </ul>
-    <p>In Addition, TaurusTLS offers the following features</p>
-    <ul>
-      <li>Virtual hosting where each domain has its own certificate</li>
-      <li>Security Levels where connections are rejected based upon cipher strength or a specific criterion.</li>
+      <li>Virtual hosting with per-domain certificates</li>
+      <li>Security levels that reject weak ciphers or meet custom criteria</li>
+      <li>Full TLS 1.3 support</li>
     </ul>
   </main>
   <footer>
