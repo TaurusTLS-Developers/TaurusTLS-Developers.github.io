@@ -315,7 +315,7 @@ footer .social-media-links li {
 }
 
 footer .social-media-links a {
-  display: inline-flex
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #f1f5f9;
