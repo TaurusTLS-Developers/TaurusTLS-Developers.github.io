@@ -104,6 +104,10 @@ tr {
   background: #f0f0f0;
 }
 
+.emphasis {
+  font-weight: 600;
+}
+
 .links-list {
   list-style: none;
   /* Remove bullets */
