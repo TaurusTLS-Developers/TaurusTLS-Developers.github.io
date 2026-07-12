@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="This page is a blog from the TaurusTLS Developers with information about current development." />
+  <meta name="description" content=
+  "This page is a blog from the TaurusTLS Developers with information about current development." />
   <meta property="og:title" content="TaurusTLS Developers' Blog" />
   <meta property="og:url" content="https://taurustls.org/" />
-  <meta property="og:description" content="This page is a blog from the TaurusTLS Developers with information about current development." />
+  <meta property="og:description" content=
+  "This page is a blog from the TaurusTLS Developers with information about current development." />
   <meta property="og:image" content="https://taurustls.org/gfx/TaurusTLS.png" />
   <link rel="icon" type="image/x-icon" href="gfx/favicon.ico" />
   <link rel="canonical" href="https://taurustls.org/blog.xhtml" />
@@ -43,47 +45,61 @@
     </nav>
   </header>
   <main id="main">
-    <h1>TaurusTLS Blog</h1>
-
-    <!-- Post #4: July 12, 2026 -->
+    <h1>TaurusTLS Blog</h1><!-- Post #4: July 12, 2026 -->
     <article id="July_12_26_TaurusTLS_2_0_ECH_Support">
       <h2>TaurusTLS 2.0: Encrypted Client Hello (ECH) Support</h2>
       <p class="post-meta">Published on July 12, 2026 by Alexander Tregubov</p>
-      <p>We are excited to share that TaurusTLS 2.0 client (<code>xxxIOHandlerSocket</code>) and server (<code>xxxServerIOHandler</code>) components will feature support for the <span class="emphasis"><a href="https://www.rfc-editor.org/rfc/rfc9849.html"> Encrypted Client Hello</a> (ECH)</span> TLS extension. This critical addition will help protect user privacy by minimizing the metadata exposed during the initial TLS handshake.</p>
-      
+      <p>We are excited to share that TaurusTLS 2.0 client (<code>xxxIOHandlerSocket</code>) and server
+      (<code>xxxServerIOHandler</code>) components will feature support for the <span class="emphasis"><a href=
+      "https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)</span> TLS extension. This critical
+      addition will help protect user privacy by minimizing the metadata exposed during the initial TLS handshake.</p>
       <h3>Initial Release Scope</h3>
       <p>Our integration of ECH in the initial release of TaurusTLS 2.0 will work as follows:</p>
       <ul>
-        <li><span class="emphasis">DNS/DoH Queries:</span> We do not plan to support dynamic retrieval of <code>ECHConfig</code> values via DNS or DNS-over-HTTPS (DoH) queries out-of-the-box on the client side (<code>xxxIOHandlerSocket</code>).</li>
-        <li><span class="emphasis">DNS Record Updates:</span> On the server side (<code>xxxServerIOHandler</code>), there will be no built-in mechanism to dynamically update DNS <code>SVCB</code> or <code>HTTPS</code> resource records with updated <code>ECHConfig</code> parameters.</li>
-        <li><span class="emphasis">Developer Flexibility:</span> To keep the library lightweight, we will instead expose the necessary APIs so that your applications can easily implement these dynamic DNS and DoH lookup tasks independently.</li>
+        <li><span class="emphasis">DNS/DoH Queries:</span> We do not plan to support dynamic retrieval of
+        <code>ECHConfig</code> values via DNS or DNS-over-HTTPS (DoH) queries out-of-the-box on the client side
+        (<code>xxxIOHandlerSocket</code>).</li>
+        <li><span class="emphasis">DNS Record Updates:</span> On the server side (<code>xxxServerIOHandler</code>), there will
+        be no built-in mechanism to dynamically update DNS <code>SVCB</code> or <code>HTTPS</code> resource records with
+        updated <code>ECHConfig</code> parameters.</li>
+        <li><span class="emphasis">Developer Flexibility:</span> To keep the library lightweight, we will instead expose the
+        necessary APIs so that your applications can easily implement these dynamic DNS and DoH lookup tasks
+        independently.</li>
       </ul>
-
       <h3>ECH GREASE Support</h3>
-      <p>To further enhance client privacy, we are also implementing the <span class="emphasis">ECH GREASE</span> (<a href="https://www.rfc-editor.org/rfc/rfc8701.html">Generate Random Extensions And Sustain Extensibility</a>) mechanism. This allows your client applications to safely send dummy ECH extensions to prevent network fingerprinting, even if an <code>ECHConfig</code> payload is not yet known (provided the destination server supports GREASE).</p>
+      <p>To further enhance client privacy, we are also implementing the <span class="emphasis">ECH GREASE</span> (<a href=
+      "https://www.rfc-editor.org/rfc/rfc8701.html">Generate Random Extensions And Sustain Extensibility</a>) mechanism. This
+      allows your client applications to safely send dummy ECH extensions to prevent network fingerprinting, even if an
+      <code>ECHConfig</code> payload is not yet known (provided the destination server supports GREASE).</p>
       <p>Stay tuned for more updates as development progresses!</p>
-    </article>
-
-    <!-- Post #3: July 11, 2026 -->
+    </article><!-- Post #3: July 11, 2026 -->
     <article id="July_11_26_Announcing_TaurusTLS_2_0">
       <h2>Announcing TaurusTLS 2.0: A Modernization Initiative</h2>
       <p class="post-meta">Published on July 11, 2026 by Alexander Tregubov</p>
-      <p>The TaurusTLS development team is pleased to announce the launch of a major modernization project for our library, currently codenamed <span class="emphasis">TaurusTLS 2.0</span>.</p>
+      <p>The TaurusTLS development team is pleased to announce the launch of a major modernization project for our library,
+      currently codenamed <span class="emphasis">TaurusTLS 2.0</span>.</p>
       <p>Our primary goals for this next-generation release include:</p>
       <ul>
-        <li><span class="emphasis">Modern OpenSSL Integration:</span> We are phasing out legacy OpenSSL 1.x API calls in favor of modern OpenSSL 3.x and newer APIs, procedures, and data structures. This ensures long-term compatibility and stability with upstream OpenSSL development.</li>
-        <li><span class="emphasis">Enhanced Multithreading Support:</span> We are restructuring internal logic to improve concurrency safety and thread performance.</li>
-        <li><span class="emphasis">Granular Traffic Control:</span> We will expand the list of configurable parameters and event handlers, giving developers more options to optimize traffic handling for their specific use cases.</li>
-        <li><span class="emphasis"><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH) Support:</span> We are adding native ECH support to both client and server components (which will require OpenSSL 4.0 or newer).</li>
+        <li><span class="emphasis">Modern <a href="https://www.openssl.org/">OpenSSL</a> Integration:</span> We are phasing out
+        legacy OpenSSL 1.x API calls in favor of modern OpenSSL 3.x and newer APIs, procedures, and data structures. This
+        ensures long-term compatibility and stability with upstream OpenSSL development.</li>
+        <li><span class="emphasis">Enhanced Multithreading Support:</span> We are restructuring internal logic to improve
+        concurrency safety and thread performance.</li>
+        <li><span class="emphasis">Granular Traffic Control:</span> We will expand the list of configurable parameters and
+        event handlers, giving developers more options to optimize traffic handling for their specific use cases.</li>
+        <li><span class="emphasis"><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)
+        Support:</span> We are adding native ECH support to both client and server components (which will require OpenSSL 4.0
+        or newer).</li>
       </ul>
-
       <h3>Backward Compatibility Notice</h3>
-      <p>Unfortunately, achieving these modernization goals means we will not be able to maintain full backward compatibility with older TaurusTLS components. We sincerely apologize for any inconvenience this may cause.</p>
-      <p>To ensure a smooth transition, we plan to maintain and support both the current TaurusTLS branch and the new TaurusTLS 2.0 branch in parallel for a reasonable timeframe. This will give you ample time to migrate and adapt your existing applications.</p>
-      <p>We highly value your feedback and feature requests as we shape TaurusTLS 2.0. Please let us know your thoughts directly on our issue tracker!</p>
-    </article>
-
-    <!-- Post #2: July 10, 2026 -->
+      <p>Unfortunately, achieving these modernization goals means we will not be able to maintain full backward compatibility
+      with older TaurusTLS components. We sincerely apologize for any inconvenience this may cause.</p>
+      <p>To ensure a smooth transition, we plan to maintain and support both the current TaurusTLS branch and the new TaurusTLS
+      2.0 branch in parallel for a reasonable timeframe. This will give you ample time to migrate and adapt your existing
+      applications.</p>
+      <p>We highly value your feedback and feature requests as we shape TaurusTLS 2.0. Please let us know your thoughts
+      directly on <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues">our issue tracker</a>!</p>
+    </article><!-- Post #2: July 10, 2026 -->
     <article id="July_09_26_We_Are_Dropping_C_Builder_Support">
       <h2>We Are Dropping C++Builder Support</h2>
       <p class="post-meta">Published on July 10, 2026 by J. Peter Mugaas and Alexander Tregubov</p>
@@ -91,10 +107,9 @@
       specialized expertise or resources required to properly address and resolve C++Builder-specific issues. To ensure the
       highest quality for our core users, we have decided to focus our efforts entirely on supporting Delphi.</p>
       <p>However, if you have strong C++Builder expertise and are interested in helping maintain or resolve issues for this
-      platform, we would highly <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/pulls">welcome your contributions</a>.</p>
-    </article>
-
-    <!-- Post #1: July 07, 2026 -->
+      platform, we would highly <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/pulls">welcome your
+      contributions</a>.</p>
+    </article><!-- Post #1: July 07, 2026 -->
     <article id="July_07_26_The_New_Website">
       <h2>The New Website</h2>
       <p class="post-meta">Published on July 07, 2026 by J. Peter Mugaas</p>
@@ -106,7 +121,6 @@
       online tools, and of course, Google.</p>
       <p>I need to thank David Nottage for helping me with the CSS. He did a much better job than I could.</p>
     </article>
-
     <aside>
       <h2>Recent Posts</h2>
       <ul>
