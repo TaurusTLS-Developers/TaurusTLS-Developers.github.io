@@ -68,24 +68,24 @@
       <h2>TaurusTLS 2.0: Encrypted Client Hello (ECH) Support</h2>
       <p class="post-meta">Published on July 12, 2026 by Alexander Tregubov</p>
       <p>We are excited to share that TaurusTLS 2.0 client (<code>xxxIOHandlerSocket</code>) and server
-      (<code>xxxServerIOHandler</code>) components will feature support for the <span class="emphasis"><a href=
-      "https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)</span> TLS extension. This critical
+      (<code>xxxServerIOHandler</code>) components will feature support for the <strong><a href=
+      "https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)</strong> TLS extension. This critical
       addition will help protect user privacy by minimizing the metadata exposed during the initial TLS handshake.</p>
       <h3>Initial Release Scope</h3>
       <p>Our integration of ECH in the initial release of TaurusTLS 2.0 will work as follows:</p>
       <ul>
-        <li><span class="emphasis">DNS/DoH Queries:</span> We do not plan to support dynamic retrieval of
+        <li><strong>DNS/DoH Queries:</strong> We do not plan to support dynamic retrieval of
         <code>ECHConfig</code> values via DNS or DNS-over-HTTPS (DoH) queries out-of-the-box on the client side
         (<code>xxxIOHandlerSocket</code>).</li>
-        <li><span class="emphasis">DNS Record Updates:</span> On the server side (<code>xxxServerIOHandler</code>), there will
+        <li><strong>DNS Record Updates:</strong> On the server side (<code>xxxServerIOHandler</code>), there will
         be no built-in mechanism to dynamically update DNS <code>SVCB</code> or <code>HTTPS</code> resource records with
         updated <code>ECHConfig</code> parameters.</li>
-        <li><span class="emphasis">Developer Flexibility:</span> To keep the library lightweight, we will instead expose the
+        <li><strong>Developer Flexibility:</strong> To keep the library lightweight, we will instead expose the
         necessary APIs so that your applications can easily implement these dynamic DNS and DoH lookup tasks
         independently.</li>
       </ul>
       <h3>ECH GREASE Support</h3>
-      <p>To further enhance client privacy, we are also implementing the <span class="emphasis">ECH GREASE</span> (<a href=
+      <p>To further enhance client privacy, we are also implementing the <strong>ECH GREASE</strong> (<a href=
       "https://www.rfc-editor.org/rfc/rfc8701.html">Generate Random Extensions And Sustain Extensibility</a>) mechanism. This
       allows your client applications to safely send dummy ECH extensions to prevent network fingerprinting, even if an
       <code>ECHConfig</code> payload is not yet known (provided the destination server supports GREASE).</p>
@@ -95,18 +95,18 @@
       <h2>Announcing TaurusTLS 2.0: A Modernization Initiative</h2>
       <p class="post-meta">Published on July 11, 2026 by Alexander Tregubov</p>
       <p>The TaurusTLS development team is pleased to announce the launch of a major modernization project for our library,
-      currently codenamed <span class="emphasis">TaurusTLS 2.0</span>.</p>
+      currently codenamed <strong>TaurusTLS 2.0</strong>.</p>
       <p>Our primary goals for this next-generation release include:</p>
       <ul>
-        <li><span class="emphasis">Modern <a href="https://www.openssl.org/">OpenSSL</a> Integration:</span> We are phasing out
+        <li><strong>Modern <a href="https://www.openssl.org/">OpenSSL</a> Integration:</strong> We are phasing out
         legacy OpenSSL 1.x API calls in favor of modern OpenSSL 3.x and newer APIs, procedures, and data structures. This
         ensures long-term compatibility and stability with upstream OpenSSL development.</li>
-        <li><span class="emphasis">Enhanced Multithreading Support:</span> We are restructuring internal logic to improve
+        <li><strong>Enhanced Multithreading Support:</strong> We are restructuring internal logic to improve
         concurrency safety and thread performance.</li>
-        <li><span class="emphasis">Granular Traffic Control:</span> We will expand the list of configurable parameters and
+        <li><strong>Granular Traffic Control:</strong> We will expand the list of configurable parameters and
         event handlers, giving developers more options to optimize traffic handling for their specific use cases.</li>
-        <li><span class="emphasis"><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)
-        Support:</span> We are adding native ECH support to both client and server components (which will require OpenSSL 4.0
+        <li><strong><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)
+        Support:</strong> We are adding native ECH support to both client and server components (which will require OpenSSL 4.0
         or newer).</li>
       </ul>
       <h3>Backward Compatibility Notice</h3>
