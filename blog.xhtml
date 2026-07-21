@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="/gfx/favicon.svg" />
   <link rel="shortcut icon" href="/gfx/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/gfx/apple-touch-icon.png" />
-  <link rel="manifest" href="/gfx/site.webmanifest" />  
+  <link rel="manifest" href="/gfx/site.webmanifest" />
   <link rel="canonical" href="https://taurustls.org/blog.xhtml" />
   <link rel="stylesheet" href="css/screen.css" media="screen" />
   <link rel="stylesheet" href="css/print.css" media="print" />
@@ -51,6 +51,16 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="July_20_26_The_CppBuilder_Support_Status_Update">
+      <h2>The C++Builder Support Status Update</h2>
+      <p class="post-meta">Published on July 20, 2026 by J. Peter Mugaas</p>
+      <p>I have checked in extensive modifications to make TaurusTLS compatible with <a href=
+      "https://www.embarcadero.com/products/cbuilder">C++Builder</a>. This resolves issue <a href=
+      "https://github.com/TaurusTLS-Developers/TaurusTLS/issues/241">#241 (error when compiling under C++Builder)</a>. These
+      changes will be available in the next release of TaurusTLS.</p>
+      <p>While we still do not formally support C++Builder due to a lack of dedicated expertise and resources, we are pleased
+      that this update significantly improves the situation for C++Builder developers.</p>
+    </article>
     <article id="July_12_26_TaurusTLS_1_0_9_51">
       <h2>TaurusTLS 1.0.9.51 Dedicated to My Late Father</h2>
       <p class="post-meta">Published on July 12, 2026 by J. Peter Mugaas</p>
@@ -79,15 +89,13 @@
       <h3>Initial Release Scope</h3>
       <p>Our integration of ECH in the initial release of TaurusTLS 2.0 will work as follows:</p>
       <ul>
-        <li><strong>DNS/DoH Queries:</strong> We do not plan to support dynamic retrieval of
-        <code>ECHConfig</code> values via DNS or DNS-over-HTTPS (DoH) queries out-of-the-box on the client side
-        (<code>xxxIOHandlerSocket</code>).</li>
-        <li><strong>DNS Record Updates:</strong> On the server side (<code>xxxServerIOHandler</code>), there will
-        be no built-in mechanism to dynamically update DNS <code>SVCB</code> or <code>HTTPS</code> resource records with
-        updated <code>ECHConfig</code> parameters.</li>
-        <li><strong>Developer Flexibility:</strong> To keep the library lightweight, we will instead expose the
-        necessary APIs so that your applications can easily implement these dynamic DNS and DoH lookup tasks
-        independently.</li>
+        <li><strong>DNS/DoH Queries:</strong> We do not plan to support dynamic retrieval of <code>ECHConfig</code> values via
+        DNS or DNS-over-HTTPS (DoH) queries out-of-the-box on the client side (<code>xxxIOHandlerSocket</code>).</li>
+        <li><strong>DNS Record Updates:</strong> On the server side (<code>xxxServerIOHandler</code>), there will be no
+        built-in mechanism to dynamically update DNS <code>SVCB</code> or <code>HTTPS</code> resource records with updated
+        <code>ECHConfig</code> parameters.</li>
+        <li><strong>Developer Flexibility:</strong> To keep the library lightweight, we will instead expose the necessary APIs
+        so that your applications can easily implement these dynamic DNS and DoH lookup tasks independently.</li>
       </ul>
       <h3>ECH GREASE Support</h3>
       <p>To further enhance client privacy, we are also implementing the <strong>ECH GREASE</strong> (<a href=
@@ -103,16 +111,15 @@
       currently codenamed <strong>TaurusTLS 2.0</strong>.</p>
       <p>Our primary goals for this next-generation release include:</p>
       <ul>
-        <li><strong>Modern <a href="https://www.openssl.org/">OpenSSL</a> Integration:</strong> We are phasing out
-        legacy OpenSSL 1.x API calls in favor of modern OpenSSL 3.x and newer APIs, procedures, and data structures. This
-        ensures long-term compatibility and stability with upstream OpenSSL development.</li>
-        <li><strong>Enhanced Multithreading Support:</strong> We are restructuring internal logic to improve
-        concurrency safety and thread performance.</li>
-        <li><strong>Granular Traffic Control:</strong> We will expand the list of configurable parameters and
-        event handlers, giving developers more options to optimize traffic handling for their specific use cases.</li>
-        <li><strong><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)
-        Support:</strong> We are adding native ECH support to both client and server components (which will require OpenSSL 4.0
-        or newer).</li>
+        <li><strong>Modern <a href="https://www.openssl.org/">OpenSSL</a> Integration:</strong> We are phasing out legacy
+        OpenSSL 1.x API calls in favor of modern OpenSSL 3.x and newer APIs, procedures, and data structures. This ensures
+        long-term compatibility and stability with upstream OpenSSL development.</li>
+        <li><strong>Enhanced Multithreading Support:</strong> We are restructuring internal logic to improve concurrency safety
+        and thread performance.</li>
+        <li><strong>Granular Traffic Control:</strong> We will expand the list of configurable parameters and event handlers,
+        giving developers more options to optimize traffic handling for their specific use cases.</li>
+        <li><strong><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH) Support:</strong> We
+        are adding native ECH support to both client and server components (which will require OpenSSL 4.0 or newer).</li>
       </ul>
       <h3>Backward Compatibility Notice</h3>
       <p>Unfortunately, achieving these modernization goals means we will not be able to maintain full backward compatibility
@@ -147,6 +154,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#July_20_26_The_CppBuilder_Support_Status_Update">The C++Builder Support Status Update</a>
+        </li>
         <li>
           <a href="#July_12_26_TaurusTLS_1_0_9_51">TaurusTLS 1.0.9.51 Dedicated to My Late Father</a>
         </li>
@@ -184,6 +194,6 @@
     </div>
     <p class="copyright">Copyright &#169; 2026 TaurusTLS Developers. All rights reserved</p>
   </footer>
-  <script src="js/hamburger.js"></script> 
+  <script src="js/hamburger.js"></script>
 </body>
 </html>
