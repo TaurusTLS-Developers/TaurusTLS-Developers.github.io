@@ -51,6 +51,44 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="July_21_26_TaurusFTP_Console_Demo_Program">
+      <h2>The TaurusFTP Console Demo Program</h2>
+      <p class="post-meta">Published on July 21, 2026 by J. Peter Mugaas</p>
+      <p>There is an unsung hero in the TaurusTLS distribution that is not given enough credit. That unsung hero is the
+      TaurusFTP Console Demo program that is included with TaurusTLS distributions in the <code>/Demos/TaurusFTPConsole</code>
+      folder. This is not merely a simple demo program, but rather a fully functional console FTP (File Transfer Protocol)
+      client that is completely driven by commands. I consider this program superior to the bundled FTP client included in
+      Windows because:</p>
+      <ul>
+        <li>It supports both explicit TLS (as defined by <a href="https://www.rfc-editor.org/info/rfc4217/">RFC 4217: Securing
+        FTP with TLS</a>) and implicit TLS with FTP. In explicit TLS, the connection starts unencrypted using the same port as
+        regular FTP, the client issues an <code>AUTH TLS</code> command, the server sends a response, and TLS negotiation
+        begins. In implicit TLS, the connection is made to port 990 and TLS negotiation happens immediately.
+        </li>
+        <li>It supports <a href="https://datatracker.ietf.org/doc/html/draft-preston-ftpext-deflate-04">Deflate transmission
+        mode for FTP</a> or <code>MODE Z</code> if the server supports this.
+        </li>
+        <li>It supports passive transfers (<code>PASV</code>) by default instead of relying on active transfers
+        (<code>PORT</code>). Passive transfers tend to be more friendly in firewall/proxy configurations and NATs (Network
+        Address Translators) than active transfers because the PASV response is an IP address and port that the server is
+        listening on. In active transfers, an IP address and port number is sent by the client and the IP address might be
+        local network instead of the Internet.</li>
+        <li>It supports the <code>EPSV</code> and <code>EPRT</code> commands that allow the client and server to communicate
+        IPv6 addresses as defined by <a href="https://www.rfc-editor.org/info/rfc2428/">RFC 2428: FTP Extensions for IPv6 and
+        NATs</a>.
+        </li>
+        <li>It supports <a href="https://www.rfc-editor.org/info/rfc2640/">RFC 2640: Internationalization of the File Transfer
+        Protocol</a>.
+        </li>
+        <li>It supports the <code>MLSD</code> command which provides a standardized machine and human-readable directory
+        listing format as specified by <a href="https://www.rfc-editor.org/info/rfc3659/">RFC 3659: Extensions to FTP</a> by
+        default instead of simply using the old standard <code>DIR</code> command which does not specify a format (although the
+        Unix format is a de facto standard).
+        </li>
+      </ul>
+      <p>Using the program is very simple. The program provides a <code>help</code> command that lists the commands and what
+      they do. In addition, you can use the <code>help command</code> function to get help with the command parameters.</p>
+    </article>
     <article id="July_20_26_The_CppBuilder_Support_Status_Update">
       <h2>The C++Builder Support Status Update</h2>
       <p class="post-meta">Published on July 20, 2026 by J. Peter Mugaas</p>
@@ -154,6 +192,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#July_21_26_TaurusFTP_Console_Demo_Progra">The TaurusFTP Console Demo Program</a>
+        </li>
         <li>
           <a href="#July_20_26_The_CppBuilder_Support_Status_Update">The C++Builder Support Status Update</a>
         </li>
