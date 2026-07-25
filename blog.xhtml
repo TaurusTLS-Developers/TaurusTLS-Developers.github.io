@@ -3,13 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content=
-  "This page is a blog from the TaurusTLS Developers with information about current development." />
+  <meta name="description" content="This page is a blog from the TaurusTLS Developers with information about current development." />
   <meta name="apple-mobile-web-app-title" content="TaurusTLS" />
   <meta property="og:title" content="TaurusTLS Developers' Blog" />
   <meta property="og:url" content="https://taurustls.org/" />
-  <meta property="og:description" content=
-  "This page is a blog from the TaurusTLS Developers with information about current development." />
+  <meta property="og:description" content="This page is a blog from the TaurusTLS Developers with information about current development." />
   <meta property="og:image" content="https://taurustls.org/gfx/TaurusTLS.png" />
   <link rel="icon" type="image/png" href="/gfx/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/gfx/favicon.svg" />
@@ -44,9 +42,7 @@
           <a href="links.xhtml">Links</a>
         </li>
       </ul>
-      <div class="hamburger">
-        <span></span> <span></span> <span></span>
-      </div>
+      <div class="hamburger"></div>
     </nav>
   </header>
   <main id="main">
@@ -54,139 +50,84 @@
     <article id="July_21_26_TaurusFTP_Console_Demo_Program">
       <h2>The TaurusFTP Console Demo Program</h2>
       <p class="post-meta">Published on July 21, 2026 by J. Peter Mugaas</p>
-      <p>There is an unsung hero in the TaurusTLS distribution that is not given enough credit. That unsung hero is the
-      TaurusFTP Console Demo program that is included with TaurusTLS distributions in the <code>/Demos/TaurusFTPConsole</code>
-      folder. This is not merely a simple demo program, but rather a fully functional console FTP (File Transfer Protocol)
-      client that is completely driven by commands. I consider this program superior to the bundled FTP client included in
-      Windows because:</p>
+      <p>There is an unsung hero in the TaurusTLS distribution that is not given enough credit. That unsung hero is the TaurusFTP Console Demo program that is included with TaurusTLS distributions in the <code>/Demos/TaurusFTPConsole</code> folder. This is not merely a simple demo program, but rather a fully functional console FTP (File Transfer Protocol) client that is completely driven by commands. I consider this program superior to the bundled FTP client included in Windows because:</p>
       <ul>
-        <li>It supports both explicit TLS (as defined by <a href="https://www.rfc-editor.org/info/rfc4217/">RFC 4217: Securing
-        FTP with TLS</a>) and implicit TLS with FTP. In explicit TLS, the connection starts unencrypted using the same port as
-        regular FTP, the client issues an <code>AUTH TLS</code> command, the server sends a response, and TLS negotiation
-        begins. In implicit TLS, the connection is made to port 990 and TLS negotiation happens immediately.
+        <li>It supports both explicit TLS (as defined by <a href="https://www.rfc-editor.org/info/rfc4217/">RFC 4217: Securing FTP with TLS</a>) and implicit TLS with FTP. In explicit TLS, the connection starts unencrypted using the same port as regular FTP, the client issues an <code>AUTH TLS</code> command, the server sends a response, and TLS negotiation begins. In implicit TLS, the connection is made to port 990 and TLS negotiation happens immediately.
         </li>
-        <li>It supports <a href="https://datatracker.ietf.org/doc/html/draft-preston-ftpext-deflate-04">Deflate transmission
-        mode for FTP</a> or <code>MODE Z</code> if the server supports this.
+        <li>It supports <a href="https://datatracker.ietf.org/doc/html/draft-preston-ftpext-deflate-04">Deflate transmission mode for FTP</a> or <code>MODE Z</code> if the server supports this.
         </li>
-        <li>It supports passive transfers (<code>PASV</code>) by default instead of relying on active transfers
-        (<code>PORT</code>). Passive transfers tend to be more friendly in firewall/proxy configurations and NATs (Network
-        Address Translators) than active transfers because the PASV response is an IP address and port that the server is
-        listening on. In active transfers, an IP address and port number is sent by the client and the IP address might be
-        local network instead of the Internet.</li>
-        <li>It supports the <code>EPSV</code> and <code>EPRT</code> commands that allow the client and server to communicate
-        IPv6 addresses as defined by <a href="https://www.rfc-editor.org/info/rfc2428/">RFC 2428: FTP Extensions for IPv6 and
-        NATs</a>.
+        <li>It supports passive transfers (<code>PASV</code>) by default instead of relying on active transfers (<code>PORT</code>). Passive transfers tend to be more friendly in firewall/proxy configurations and NATs (Network Address Translators) than active transfers because the PASV response is an IP address and port that the server is listening on. In active transfers, an IP address and port number is sent by the client and the IP address might be local network instead of the Internet.</li>
+        <li>It supports the <code>EPSV</code> and <code>EPRT</code> commands that allow the client and server to communicate IPv6 addresses as defined by <a href="https://www.rfc-editor.org/info/rfc2428/">RFC 2428: FTP Extensions for IPv6 and NATs</a>.
         </li>
-        <li>It supports <a href="https://www.rfc-editor.org/info/rfc2640/">RFC 2640: Internationalization of the File Transfer
-        Protocol</a>.
+        <li>It supports <a href="https://www.rfc-editor.org/info/rfc2640/">RFC 2640: Internationalization of the File Transfer Protocol</a>.
         </li>
-        <li>It supports the <code>MLSD</code> command which provides a standardized machine and human-readable directory
-        listing format as specified by <a href="https://www.rfc-editor.org/info/rfc3659/">RFC 3659: Extensions to FTP</a> by
-        default instead of simply using the old standard <code>DIR</code> command which does not specify a format (although the
-        Unix format is a de facto standard).
+        <li>It supports the <code>MLSD</code> command which provides a standardized machine and human-readable directory listing format as specified by <a href="https://www.rfc-editor.org/info/rfc3659/">RFC 3659: Extensions to FTP</a> by default instead of simply using the old standard <code>DIR</code> command which does not specify a format (although the Unix format is a de facto standard).
         </li>
       </ul>
-      <p>Using the program is very simple. The program provides a <code>help</code> command that lists the commands and what
-      they do. In addition, you can use the <code>help command</code> function to get help with the command parameters.</p>
+      <p>Using the program is very simple. The program provides a <code>help</code> command that lists the commands and what they do. In addition, you can use the <code>help command</code> function to get help with the command parameters.</p>
     </article>
     <article id="July_20_26_The_CppBuilder_Support_Status_Update">
       <h2>The C++Builder Support Status Update</h2>
       <p class="post-meta">Published on July 20, 2026 by J. Peter Mugaas</p>
-      <p>I have checked in extensive modifications to make TaurusTLS compatible with <a href=
-      "https://www.embarcadero.com/products/cbuilder">C++Builder</a>. This resolves issue <a href=
-      "https://github.com/TaurusTLS-Developers/TaurusTLS/issues/241">#241 (error when compiling under C++Builder)</a>. These
-      changes will be available in the next release of TaurusTLS.</p>
-      <p>While we still do not formally support C++Builder due to a lack of dedicated expertise and resources, we are pleased
-      that this update significantly improves the situation for C++Builder developers.</p>
+      <p>I have checked in extensive modifications to make TaurusTLS compatible with <a href="https://www.embarcadero.com/products/cbuilder">C++Builder</a>. This resolves issue <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/241">#241 (error when compiling under C++Builder)</a>. These changes will be available in the next release of TaurusTLS.</p>
+      <p>While we still do not formally support C++Builder due to a lack of dedicated expertise and resources, we are pleased that this update significantly improves the situation for C++Builder developers.</p>
     </article>
     <article id="July_12_26_TaurusTLS_1_0_9_51">
       <h2>TaurusTLS 1.0.9.51 Dedicated to My Late Father</h2>
       <p class="post-meta">Published on July 12, 2026 by J. Peter Mugaas</p>
-      <p>We are <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases/tag/1.0.9.51">releasing TaurusTLS
-      1.0.9.51</a>. This fixes several bugs including:</p>
+      <p>We are <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases/tag/1.0.9.51">releasing TaurusTLS 1.0.9.51</a>. This fixes several bugs including:</p>
       <ul>
         <li>
           <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/240">Exception code 13, lazarus x86_64 linux</a>
         </li>
         <li>
-          <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/226">Error compiling: Posix not found. TaurusTLS
-          1.0.8.48 Lazarus 4.6 FPC 3.2.2</a>
+          <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/226">Error compiling: Posix not found. TaurusTLS 1.0.8.48 Lazarus 4.6 FPC 3.2.2</a>
         </li>
       </ul>
-      <p>This release supports <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/pull/228">bidirectional shutdown</a>
-      through the property <code>UseBidirectionalShutdown</code>.</p>
+      <p>This release supports <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/pull/228">bidirectional shutdown</a> through the property <code>UseBidirectionalShutdown</code>.</p>
       <p>This release is dedicated to my late father, John N. Mugaas, PhD. who died June 27, 2026. RIP.</p>
     </article><!-- Post #4: July 12, 2026 -->
     <article id="July_12_26_TaurusTLS_2_0_ECH_Support">
       <h2>TaurusTLS 2.0: Encrypted Client Hello (ECH) Support</h2>
       <p class="post-meta">Published on July 12, 2026 by Alexander Tregubov</p>
-      <p>We are excited to share that TaurusTLS 2.0 client (<code>xxxIOHandlerSocket</code>) and server
-      (<code>xxxServerIOHandler</code>) components will feature support for the <strong><a href=
-      "https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)</strong> TLS extension. This critical
-      addition will help protect user privacy by minimizing the metadata exposed during the initial TLS handshake.</p>
+      <p>We are excited to share that TaurusTLS 2.0 client (<code>xxxIOHandlerSocket</code>) and server (<code>xxxServerIOHandler</code>) components will feature support for the <strong><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH)</strong> TLS extension. This critical addition will help protect user privacy by minimizing the metadata exposed during the initial TLS handshake.</p>
       <h3>Initial Release Scope</h3>
       <p>Our integration of ECH in the initial release of TaurusTLS 2.0 will work as follows:</p>
       <ul>
-        <li><strong>DNS/DoH Queries:</strong> We do not plan to support dynamic retrieval of <code>ECHConfig</code> values via
-        DNS or DNS-over-HTTPS (DoH) queries out-of-the-box on the client side (<code>xxxIOHandlerSocket</code>).</li>
-        <li><strong>DNS Record Updates:</strong> On the server side (<code>xxxServerIOHandler</code>), there will be no
-        built-in mechanism to dynamically update DNS <code>SVCB</code> or <code>HTTPS</code> resource records with updated
-        <code>ECHConfig</code> parameters.</li>
-        <li><strong>Developer Flexibility:</strong> To keep the library lightweight, we will instead expose the necessary APIs
-        so that your applications can easily implement these dynamic DNS and DoH lookup tasks independently.</li>
+        <li><strong>DNS/DoH Queries:</strong> We do not plan to support dynamic retrieval of <code>ECHConfig</code> values via DNS or DNS-over-HTTPS (DoH) queries out-of-the-box on the client side (<code>xxxIOHandlerSocket</code>).</li>
+        <li><strong>DNS Record Updates:</strong> On the server side (<code>xxxServerIOHandler</code>), there will be no built-in mechanism to dynamically update DNS <code>SVCB</code> or <code>HTTPS</code> resource records with updated <code>ECHConfig</code> parameters.</li>
+        <li><strong>Developer Flexibility:</strong> To keep the library lightweight, we will instead expose the necessary APIs so that your applications can easily implement these dynamic DNS and DoH lookup tasks independently.</li>
       </ul>
       <h3>ECH GREASE Support</h3>
-      <p>To further enhance client privacy, we are also implementing the <strong>ECH GREASE</strong> (<a href=
-      "https://www.rfc-editor.org/rfc/rfc8701.html">Generate Random Extensions And Sustain Extensibility</a>) mechanism. This
-      allows your client applications to safely send dummy ECH extensions to prevent network fingerprinting, even if an
-      <code>ECHConfig</code> payload is not yet known (provided the destination server supports GREASE).</p>
+      <p>To further enhance client privacy, we are also implementing the <strong>ECH GREASE</strong> (<a href="https://www.rfc-editor.org/rfc/rfc8701.html">Generate Random Extensions And Sustain Extensibility</a>) mechanism. This allows your client applications to safely send dummy ECH extensions to prevent network fingerprinting, even if an <code>ECHConfig</code> payload is not yet known (provided the destination server supports GREASE).</p>
       <p>Stay tuned for more updates as development progresses!</p>
     </article><!-- Post #3: July 11, 2026 -->
     <article id="July_11_26_Announcing_TaurusTLS_2_0">
       <h2>Announcing TaurusTLS 2.0: A Modernization Initiative</h2>
       <p class="post-meta">Published on July 11, 2026 by Alexander Tregubov</p>
-      <p>The TaurusTLS development team is pleased to announce the launch of a major modernization project for our library,
-      currently codenamed <strong>TaurusTLS 2.0</strong>.</p>
+      <p>The TaurusTLS development team is pleased to announce the launch of a major modernization project for our library, currently codenamed <strong>TaurusTLS 2.0</strong>.</p>
       <p>Our primary goals for this next-generation release include:</p>
       <ul>
-        <li><strong>Modern <a href="https://www.openssl.org/">OpenSSL</a> Integration:</strong> We are phasing out legacy
-        OpenSSL 1.x API calls in favor of modern OpenSSL 3.x and newer APIs, procedures, and data structures. This ensures
-        long-term compatibility and stability with upstream OpenSSL development.</li>
-        <li><strong>Enhanced Multithreading Support:</strong> We are restructuring internal logic to improve concurrency safety
-        and thread performance.</li>
-        <li><strong>Granular Traffic Control:</strong> We will expand the list of configurable parameters and event handlers,
-        giving developers more options to optimize traffic handling for their specific use cases.</li>
-        <li><strong><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH) Support:</strong> We
-        are adding native ECH support to both client and server components (which will require OpenSSL 4.0 or newer).</li>
+        <li><strong>Modern <a href="https://www.openssl.org/">OpenSSL</a> Integration:</strong> We are phasing out legacy OpenSSL 1.x API calls in favor of modern OpenSSL 3.x and newer APIs, procedures, and data structures. This ensures long-term compatibility and stability with upstream OpenSSL development.</li>
+        <li><strong>Enhanced Multithreading Support:</strong> We are restructuring internal logic to improve concurrency safety and thread performance.</li>
+        <li><strong>Granular Traffic Control:</strong> We will expand the list of configurable parameters and event handlers, giving developers more options to optimize traffic handling for their specific use cases.</li>
+        <li><strong><a href="https://www.rfc-editor.org/rfc/rfc9849.html">Encrypted Client Hello</a> (ECH) Support:</strong> We are adding native ECH support to both client and server components (which will require OpenSSL 4.0 or newer).</li>
       </ul>
       <h3>Backward Compatibility Notice</h3>
-      <p>Unfortunately, achieving these modernization goals means we will not be able to maintain full backward compatibility
-      with older TaurusTLS components. We sincerely apologize for any inconvenience this may cause.</p>
-      <p>To ensure a smooth transition, we plan to maintain and support both the current TaurusTLS branch and the new TaurusTLS
-      2.0 branch in parallel for a reasonable timeframe. This will give you ample time to migrate and adapt your existing
-      applications.</p>
-      <p>We highly value your feedback and feature requests as we shape TaurusTLS 2.0. Please let us know your thoughts
-      directly on <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues">our issue tracker</a>!</p>
+      <p>Unfortunately, achieving these modernization goals means we will not be able to maintain full backward compatibility with older TaurusTLS components. We sincerely apologize for any inconvenience this may cause.</p>
+      <p>To ensure a smooth transition, we plan to maintain and support both the current TaurusTLS branch and the new TaurusTLS 2.0 branch in parallel for a reasonable timeframe. This will give you ample time to migrate and adapt your existing applications.</p>
+      <p>We highly value your feedback and feature requests as we shape TaurusTLS 2.0. Please let us know your thoughts directly on <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues">our issue tracker</a>!</p>
     </article><!-- Post #2: July 10, 2026 -->
     <article id="July_09_26_We_Are_Dropping_C_Builder_Support">
       <h2>We Are Dropping C++Builder Support</h2>
       <p class="post-meta">Published on July 10, 2026 by J. Peter Mugaas and Alexander Tregubov</p>
-      <p>We are saddened to announce that we are officially dropping support for C++Builder. Unfortunately, we do not have the
-      specialized expertise or resources required to properly address and resolve C++Builder-specific issues. To ensure the
-      highest quality for our core users, we have decided to focus our efforts entirely on supporting Delphi.</p>
-      <p>However, if you have strong C++Builder expertise and are interested in helping maintain or resolve issues for this
-      platform, we would highly <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/pulls">welcome your
-      contributions</a>.</p>
+      <p>We are saddened to announce that we are officially dropping support for C++Builder. Unfortunately, we do not have the specialized expertise or resources required to properly address and resolve C++Builder-specific issues. To ensure the highest quality for our core users, we have decided to focus our efforts entirely on supporting Delphi.</p>
+      <p>However, if you have strong C++Builder expertise and are interested in helping maintain or resolve issues for this platform, we would highly <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/pulls">welcome your contributions</a>.</p>
     </article><!-- Post #1: July 07, 2026 -->
     <article id="July_07_26_The_New_Website">
       <h2>The New Website</h2>
       <p class="post-meta">Published on July 07, 2026 by J. Peter Mugaas</p>
-      <p>TaurusTLS has a new website. It took several days of coffee-fueled benders to do this. My goals for this website is
-      make information available about TaurusTLS to the people that need it. This involves handicapped accessibility (an
-      extremely personal thing for me), ability to work on mobile devices, and the ability to print the content of this site.
-      This involved a lot of research and testing. The website is completely done by hand using tools such as <a href=
-      "https://www.htmlvalidator.com/">CSE-Validator</a>, <a href="https://www.totalvalidator.com/">Total Validator</a>, some
-      online tools, and of course, Google.</p>
+      <p>TaurusTLS has a new website. It took several days of coffee-fueled benders to do this. My goals for this website is make information available about TaurusTLS to the people that need it. This involves handicapped accessibility (an extremely personal thing for me), ability to work on mobile devices, and the ability to print the content of this site. This involved a lot of research and testing. The website is completely done by hand using tools such as <a href="https://www.htmlvalidator.com/">CSE-Validator</a>, <a href="https://www.totalvalidator.com/">Total Validator</a>, some online tools, and of course, Google.</p>
       <p>I need to thank David Nottage for helping me with the CSS. He did a much better job than I could.</p>
     </article>
     <aside>
@@ -220,21 +161,18 @@
     <div class="social-media-links">
       <ul>
         <li>
-          <a href="https://github.com/TaurusTLS-Developers" rel="noopener noreferrer"><img src="gfx/github.svg" alt=
-          "Visit us on GitHub" class="social-icon" height="16" width="16" /></a>
+          <a href="https://github.com/TaurusTLS-Developers" rel="noopener noreferrer"><img src="gfx/github.svg" alt="Visit us on GitHub" class="social-icon" height="16" width="16" /></a>
         </li>
         <li>
-          <a href="https://www.facebook.com/people/Taurustls/61582588996953/" rel="noopener noreferrer"><img src=
-          "gfx/facebook.svg" alt="Visit Us on Facebook" class="social-icon" height="16" width="16" /></a>
+          <a href="https://www.facebook.com/people/Taurustls/61582588996953/" rel="noopener noreferrer"><img src="gfx/facebook.svg" alt="Visit Us on Facebook" class="social-icon" height="16" width="16" /></a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/company/109619101" rel="noopener noreferrer"><img src="gfx/linkedin.svg" alt=
-          "Visit Us on LinkedIn" class="social-icon" height="16" width="16" /></a>
+          <a href="https://www.linkedin.com/company/109619101" rel="noopener noreferrer"><img src="gfx/linkedin.svg" alt="Visit Us on LinkedIn" class="social-icon" height="16" width="16" /></a>
         </li>
       </ul>
     </div>
-    <p class="copyright">Copyright &#169; 2026 TaurusTLS Developers. All rights reserved</p>
+    <p class="copyright">Copyright © 2026 TaurusTLS Developers. All rights reserved</p>
   </footer>
-  <script src="js/hamburger.js"></script> 
+  <script src="js/hamburger.js"></script>
 </body>
 </html>
