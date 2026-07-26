@@ -179,7 +179,7 @@ nav.navbar {
   color: var(--nav-text);
   background-color: var(--nav-bg);
   min-height: 44px;
-  min-width: 44px;  
+  min-width: 44px;
   text-decoration: none;
   font-weight: 500;
   transition: background-color var(--transition), color var(--transition);
@@ -340,6 +340,8 @@ footer .social-media-links a {
   justify-content: center;
   color: #f1f5f9;
   background-color: var(--nav-bg);
+  min-height: 44px;
+  min-width: 44px;
   opacity: 0.95;
   transition: opacity var(--transition), transform var(--transition), color var(--transition);
 }
@@ -348,6 +350,8 @@ footer .social-media-links a:hover {
   opacity: 1;
   color: #ffffff;
   transform: translateY(-1px);
+  min-height: 44px;
+  min-width: 44px;
 }
 
 footer .social-media-links img,
@@ -355,6 +359,7 @@ footer .social-media-links svg {
   width: 22px;
   height: 22px;
   display: block;
+  vertical-align: middle;
 }
 
 footer .copyright {
