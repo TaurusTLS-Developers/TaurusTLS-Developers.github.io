@@ -20,7 +20,6 @@
   <link rel="canonical" href="https://taurustls.org/blog.xhtml" />
   <link rel="stylesheet" href="css/screen.css" media="screen" />
   <link rel="stylesheet" href="css/print.css" media="print" />
-
 </head>
 <body>
   <header>
@@ -53,6 +52,20 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="July_28_26_TaurusTLS_1_0_10_52">
+      <h2>TaurusTLS 1.0.10.52</h2>
+      <p class="post-meta">Published on July 28, 2026 by J. Peter Mugaas</p>
+      <p>We are pleased to announce the <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases/tag/1.0.10.52">release of TaurusTLS 1.0.10.52</a>. This maintenance release addresses several bugs, including:</p>
+      <ul>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/241">Issue #241 (Error when compiling under C++Builder)</a>
+        </li>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/251">Issue #251 (Socket unresponsiveness under poor network conditions on POSIX)</a>
+        </li>
+      </ul>
+      <p>As <a href="#July_20_26_The_CppBuilder_Situation">previously discussed</a>, this release significantly improves compatibility for C++Builder developers.</p>
+    </article>
     <article id="July_27_26_TaurusTLS_2_0_Status_Update">
       <h2>TaurusTLS 2.0 Status Update</h2>
       <p class="post-meta">Published on July 27, 2026 by Alexander Tregubov</p>
@@ -61,7 +74,7 @@
       <p>However, the SSL/TLS protocols rely on internal control frames—which can be transmitted in the middle of application data—to maintain connection integrity. Losing one or more of these control frames can delay read/write operations and directly impact the responsiveness of <code>TaurusTLSIOHandlerSocket</code>. To improve stability under unstable network conditions, the TaurusTLS team plans to disable <code>SSL_MODE_AUTO_RETRY</code> in <strong>TaurusTLS 2.0</strong>.</p>
       <p>We are currently evaluating the implementation complexity and the robust error handling required for this approach.</p>
       <p>Stay tuned for more updates.</p>
-    </article>    
+    </article>
     <article id="July_21_26_TaurusFTP_Console_Demo_Program">
       <h2>The TaurusFTP Console Demo Program</h2>
       <p class="post-meta">Published on July 21, 2026 by J. Peter Mugaas</p>
@@ -148,6 +161,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#July_28_26_TaurusTLS_1_0_10_52">TaurusTLS 1.0.10.52</a>
+        </li>
         <li>
           <a href="#July_27_26_TaurusTLS_2_0_Status_Update">TaurusTLS 2.0 Status Update</a>
         </li>
