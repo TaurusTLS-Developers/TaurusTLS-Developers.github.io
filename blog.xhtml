@@ -53,6 +53,15 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="July_27_26_TaurusTLS_2_0_Status_Update">
+      <h2>TaurusTLS 2.0 Status Update</h2>
+      <p class="post-meta">Published on July 27, 2026 by Alexander Tregubov</p>
+      <p>Recently, we resolved an issue that affected the behavior of <code>TaurusTLSIOHandlerSocket</code> under poor network conditions on POSIX systems. See <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/251">Issue #251 (Strange client issue)</a>. This fix prompted us to review OpenSSL and TCP socket interoperability in <strong>TaurusTLS 2.0</strong>.</p>
+      <p>We found that OpenSSL enables <code>SSL_MODE_AUTO_RETRY</code> by default. In this mode, OpenSSL prevents read and write operations from returning control to the application while it processes the transmission of internal protocol messages. It only yields control once it has successfully decoded application data records, or when application records are encoded and sent successfully.</p>
+      <p>However, the SSL/TLS protocols rely on internal control frames—which can be transmitted in the middle of application data—to maintain connection integrity. Losing one or more of these control frames can delay read/write operations and directly impact the responsiveness of <code>TaurusTLSIOHandlerSocket</code>. To improve stability under unstable network conditions, the TaurusTLS team plans to disable <code>SSL_MODE_AUTO_RETRY</code> in <strong>TaurusTLS 2.0</strong>.</p>
+      <p>We are currently evaluating the implementation complexity and the robust error handling required for this approach.</p>
+      <p>Stay tuned for more updates.</p>
+    </article>    
     <article id="July_21_26_TaurusFTP_Console_Demo_Program">
       <h2>The TaurusFTP Console Demo Program</h2>
       <p class="post-meta">Published on July 21, 2026 by J. Peter Mugaas</p>
