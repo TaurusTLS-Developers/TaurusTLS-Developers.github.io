@@ -54,51 +54,73 @@
   </header>
   <main id="main">
     <h1>Download</h1>
-    <h2>Download TaurusTLS Source-Code</h2>
-    <h3>Release Versions of TaurusTLS</h3>
-    <h4>TMS Smart Setup 2.0</h4>
-    <p>If you have <a href="https://doc.tmssoftware.com/smartsetup/download/index.html">TMS Smart Setup 2.0</a> with no credentials required, go to the "TMS Smart Setup Console", and do the following to install TaurusTLS:<br />
-    <code>tms configure<br />
-tms install taurustls_developers.taurustls</code>
-    </p>
-    <h4>DPM</h4>
-    <p>If you have <a href="https://github.com/DelphiPackageManager/DPM">DPM</a> installed, you can type:<br />
-    <code>dpm install TaurusTLS_Developers.TaurusTLS</code></p>
-    <h4>GetIt</h4>
-    <ol>
-      <li>In the <a href="https://www.embarcadero.com/products/rad-studio/">RAD Studio IDE</a>, click <code>Tools</code>|<code>GetIt Package Manager</code>.</li>
-      <li>From the search bar at the top of the Window, type "<code>TaurusTLS</code>"</li>
-      <li>You should see a listing titled "TaurusTLS".  Click the ""<code>Install</code>" button and then the click "<code>Accept</code>" button in the license Dialog-box.</li>
-    </ol>
-    <h4>Online Package Manager (OPM)</h4>
-    <ol>
-      <li>In the <a href="https://www.lazarus-ide.org/">Lazarus IDE</a>, click <code>Package</code>|<code>Online Package Manager</code></li>
-      <li>A Dialog-box should appear.  In the <code>Filter Packages</code> text entry box, type TaurusTLS.</li>
-      <li>You should see "TaurusTLS" listed under packages, expand it and check both check boxes for the .lpk packages.</li>
-      <li>Click the <code>install</code> button at the bottom of the dialog-box.</li>
-    </ol>
-    <h4>Manual</h4>
-    <p>TaurusTLS <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases">Releases are available on GitHub</a>.</p>
-    <h5>For Indy Included with Delphi</h5>
-    <ol>
-      <li>Open TaurusAll.groupproj in the TaurusTLS\Packages\d12 folder.</li>
-      <li>Compile TaurusTLS_RT.</li>
-      <li>Compile TaurusTLS_DT and install it in the IDE.</li>
-    </ol>
-    <h5>For Indy that was Upgraded from the Website</h5>
-    <ol>
-      <li>Set the INDY_PATH environment variable for your user account to the location where Indy is located.</li>
-      <li>Open TaurusForIndy290All.groupproj in the TaurusTLS\Packages\d12 folder.</li>
-      <li>Compile TaurusTLS_RTForIndy290.</li>
-      <li>Compile TaurusTLS_DTForIndy290 and install it in the IDE.</li>
-    </ol>
-    <h3>Development Versions of TaurusTLS</h3>
-    <p>TaurusTLS uses <a href="https://git-scm.com/">git</a> for it's version control system. You can clone the repository with the command:<br />
-    <code>git clone https://github.com/TaurusTLS-Developers/TaurusTLS.git</code></p>
-    <p>You can also <a href="https://github.com/TaurusTLS-Developers/TaurusTLS">view the repository</a>.</p>
-    <h2>Download OpenSSL binaries</h2>
-    <p>We also provide pre-compiled <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">OpenSSL binaries</a>.</p>
-    <p>Instructions for deploying your applications with the OpenSSL Binary Releases are in the <a href="deployapps.html">Deployment page</a>.</p>
+    
+    <section>
+      <h2>TaurusTLS Source Code</h2>
+      <p>TaurusTLS is an open-source library. You can acquire the source code using automated package managers, manual build compilation, or by tracking our active development branch.</p>
+
+      <h3>Automated Installation (Package Managers)</h3>
+      
+      <h4>TMS Smart Setup 2.0</h4>
+      <p>If you have <a href="https://doc.tmssoftware.com/smartsetup/download/index.html">TMS Smart Setup 2.0</a> configured for public access, open the TMS Smart Setup Console and execute the following commands to install TaurusTLS:</p>
+      <pre><code>tms configure
+tms install taurustls_developers.taurustls</code></pre>
+      
+      <h4>DPM (Delphi Package Manager)</h4>
+      <p>If you have the <a href="https://github.com/DelphiPackageManager/DPM">DPM</a> client installed, execute the following command in your terminal:</p>
+      <pre><code>dpm install TaurusTLS_Developers.TaurusTLS</code></pre>
+      
+      <h4>GetIt Package Manager (RAD Studio)</h4>
+      <ol>
+        <li>Inside the <a href="https://www.embarcadero.com/products/rad-studio/">RAD Studio IDE</a>, navigate to <strong>Tools</strong> | <strong>GetIt Package Manager</strong>.</li>
+        <li>Type <code>TaurusTLS</code> in the search bar.</li>
+        <li>Locate the "TaurusTLS" listing, click <strong>Install</strong>, and then accept the license terms.</li>
+      </ol>
+      
+      <h4>Online Package Manager (OPM - Lazarus)</h4>
+      <ol>
+        <li>Inside the <a href="https://www.lazarus-ide.org/">Lazarus IDE</a>, navigate to <strong>Package</strong> | <strong>Online Package Manager</strong>.</li>
+        <li>In the <strong>Filter Packages</strong> input box, type <code>TaurusTLS</code>.</li>
+        <li>Locate the "TaurusTLS" entry, expand it, and select both <code>.lpk</code> package checkboxes.</li>
+        <li>Click <strong>Install</strong> at the bottom of the dialog box.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>Manual Installation</h3>
+      <p>Pre-packaged archives are compiled and published directly on GitHub. Download the latest release from the <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases">TaurusTLS Releases page</a>.</p>
+      
+      <h4>Option A: Compiling with Indy Bundled with Delphi</h4>
+      <ol>
+        <li>Open the <code>TaurusAll.groupproj</code> project group in the <code>TaurusTLS\Packages\d12</code> directory.</li>
+        <li>Compile the runtime package: <code>TaurusTLS_RT</code>.</li>
+        <li>Compile and install the design-time package: <code>TaurusTLS_DT</code>.</li>
+      </ol>
+      
+      <h4>Option B: Compiling with an Upgraded/Custom Indy Installation</h4>
+      <ol>
+        <li>Set the <code>INDY_PATH</code> environment variable for your user account to the directory containing your custom Indy installation.</li>
+        <li>Open the <code>TaurusForIndy290All.groupproj</code> project group in the <code>TaurusTLS\Packages\d12</code> directory.</li>
+        <li>Compile the custom runtime package: <code>TaurusTLS_RTForIndy290</code>.</li>
+        <li>Compile and install the custom design-time package: <code>TaurusTLS_DTForIndy290</code>.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>Active Development (Git)</h3>
+      <p>TaurusTLS uses Git for version control. To track active commits, test the latest development code, or contribute to the project, clone our repository using the following command:</p>
+      <pre><code>git clone https://github.com/TaurusTLS-Developers/TaurusTLS.git</code></pre>
+      <p>You can also browse the active tree directly on the <a href="https://github.com/TaurusTLS-Developers/TaurusTLS">GitHub Repository</a>.</p>
+    </section>
+
+    <section>
+      <h2>Pre-Compiled OpenSSL Binaries</h2>
+      <p>To simplify integration on deployment platforms without pre-installed dependencies (such as Windows), we distribute pre-compiled OpenSSL 3.x and 4.x libraries. These binaries are compiled via automated, reproducible GitHub Actions workflows to ensure software supply chain integrity.</p>
+      <ul>
+        <li>Download the compiled binary packages from our <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">OpenSSL Distribution Releases</a>.</li>
+        <li>Review detailed integration and linking instructions on the <a href="deployapps.html">Deployment page</a>.</li>
+      </ul>
+    </section>
   </main>
   <footer>
     <div class="social-media-links">
