@@ -55,10 +55,10 @@
     <article id="August_09_26_TaurusTLS_2_0_OSSL_STORE_API_Wrappers">
       <h2>TaurusTLS 2.0 Internals: OpenSSL OSSL_STORE API Wrappers</h2>
       <p class="post-meta">Published on August 09, 2026 by Alexander Tregubov</p>
-    
+
       <h3>Introduction</h3>
       <p>The OpenSSL context (<code>SSL_CTX</code>) and connection (<code>SSL</code>) structures rely on Public Key Infrastructure (PKI) objects—such as certificates, public and private keys, CRLs (Certificate Revocation Lists), and Diffie-Hellman (DH) or Elliptic Curve (EC) parameters—to establish secure communications. These PKI objects can be packaged in various formats, including Base64-encoded <code>PEM</code> files, raw binary <code>DER</code> files, or <code>PKCS#12</code> containers. Each format has its own distinct structure, encoding scheme, and internal encryption mechanisms.</p>
-      
+
       <p>Historically, OpenSSL implemented distinct sets of routines tailored to each specific format. This introduces significant challenges for developers who need to support multiple PKI formats in their applications, as these legacy routines feature divergent parameter signatures and inconsistent usage patterns. To address this, OpenSSL introduced the <code>OSSL_STORE</code> API in version 1.1.1, which became fully production-ready in OpenSSL 3.0. This API offers a unified interface capable of processing all major PKI formats under a single, cohesive framework.</p>
     
       <h3>How the Original TaurusTLS Handles PKI Objects</h3>
@@ -197,6 +197,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#August_09_26_TaurusTLS_2_0_OSSL_STORE_API_Wrappers">TaurusTLS 2.0 Internals: OpenSSL OSSL_STORE API Wrappers</a>
+        </li>
         <li>
           <a href="#July_28_26_TaurusTLS_1_0_10_52">TaurusTLS 1.0.10.52</a>
         </li>
