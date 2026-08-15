@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -47,7 +47,7 @@
           <a href="links.xhtml">Links</a>
         </li>
       </ul>
-       <div class="hamburger">
+      <div class="hamburger">
         <span></span> <span></span> <span></span>
       </div>
     </nav>
@@ -63,52 +63,36 @@
         <li>
           <strong>Classic Desktop Installer:</strong> A single hybrid executable built with <a href="https://jrsoftware.org/isinfo.php">Inno Setup</a>. It runs seamlessly on both Intel (x86/x64) and ARM64 platforms, automatically detecting the host environment at runtime to deploy the correct architecture-specific binaries.
         </li>
-        <li>
-          <strong>UWP Sideloading Packages:</strong> A modern, <code>.msix</code> packages that provides a seamless, one-click installation experience optimized for Universal Windows Platform (UWP) applications.
-        </li>
+        <li><strong>UWP Sideloading Packages:</strong> A modern, <code>.msix</code> packages that provides a seamless, one-click installation experience optimized for Universal Windows Platform (UWP) applications.</li>
       </ul>
       <p>Both kinds of installer packages are fully digitally signed under the name "J. Peter Mugaas" using our Individual Validation (IV) Code Signing Certificate, ensuring secure, tamper-free delivery and a smoother installation process on Windows systems.</p>
     </article>
     <article id="August_12_26_OpenSSL_Now_Code_Signed">
-        <h2>OpenSSL Binaries Now Code-Signed</h2>
-        <p class="post-meta">Published on August 12, 2026 by J. Peter Mugaas</p>
-        <p>We are pleased to announce that starting today, our distributed OpenSSL 4.0.1, 3.6.3, 3.5.7, 3.4.6, and 3.0.21 DLLs and the <code>openssl.exe</code> executable are officially code-signed under the name "J. Peter Mugaas".</p>
-        <p>This digital signature ensures the integrity and authenticity of the binaries, verifying that they have not been altered or tampered with since compilation. Additionally, code-signing should help reduce false-positive warnings from antivirus software and Windows SmartScreen during installation.</p>
-        <p>We highly recommend updating your software distributions with these newly signed files.</p>
+      <h2>OpenSSL Binaries Now Code-Signed</h2>
+      <p class="post-meta">Published on August 12, 2026 by J. Peter Mugaas</p>
+      <p>We are pleased to announce that starting today, our distributed OpenSSL 4.0.1, 3.6.3, 3.5.7, 3.4.6, and 3.0.21 DLLs and the <code>openssl.exe</code> executable are officially code-signed under the name "J. Peter Mugaas".</p>
+      <p>This digital signature ensures the integrity and authenticity of the binaries, verifying that they have not been altered or tampered with since compilation. Additionally, code-signing should help reduce false-positive warnings from antivirus software and Windows SmartScreen during installation.</p>
+      <p>We highly recommend updating your software distributions with these newly signed files.</p>
     </article>
     <article id="August_09_26_TaurusTLS_2_0_OSSL_STORE_API_Wrappers">
       <h2>TaurusTLS 2.0 Internals: OpenSSL OSSL_STORE API Wrappers</h2>
       <p class="post-meta">Published on August 09, 2026 by Alexander Tregubov</p>
-
       <h3>Introduction</h3>
       <p>The OpenSSL context (<code>SSL_CTX</code>) and connection (<code>SSL</code>) structures rely on Public Key Infrastructure (PKI) objects—such as certificates, public and private keys, CRLs (Certificate Revocation Lists), and Diffie-Hellman (DH) or Elliptic Curve (EC) parameters—to establish secure communications. These PKI objects can be packaged in various formats, including Base64-encoded <code>PEM</code> files, raw binary <code>DER</code> files, or <code>PKCS#12</code> containers. Each format has its own distinct structure, encoding scheme, and internal encryption mechanisms.</p>
-
       <p>Historically, OpenSSL implemented distinct sets of routines tailored to each specific format. This introduces significant challenges for developers who need to support multiple PKI formats in their applications, as these legacy routines feature divergent parameter signatures and inconsistent usage patterns. To address this, OpenSSL introduced the <code>OSSL_STORE</code> API in version 1.1.1, which became fully production-ready in OpenSSL 3.0. This API offers a unified interface capable of processing all major PKI formats under a single, cohesive framework.</p>
-    
       <h3>How the Original TaurusTLS Handles PKI Objects</h3>
       <ul>
-        <li>
-          <strong>Legacy Routines:</strong> The original TaurusTLS implementation relies on legacy OpenSSL APIs to load PKI objects exclusively from disk or the Windows Certificate Store. These old routines do not support the direct ingestion of in-memory PKI data.
-        </li>
-        <li>
-          <strong>Reactive Loading Overhead:</strong> Current <code>IOHandler</code> instances use a reactive loading pattern, resolving PKI objects on demand. For example, a server-side SSL socket reloads the certificate and private key files on every incoming client connection. This results in redundant disk I/O operations and reduces connection throughput (Connections Per Minute / CPM).
-        </li>
+        <li><strong>Legacy Routines:</strong> The original TaurusTLS implementation relies on legacy OpenSSL APIs to load PKI objects exclusively from disk or the Windows Certificate Store. These old routines do not support the direct ingestion of in-memory PKI data.</li>
+        <li><strong>Reactive Loading Overhead:</strong> Current <code>IOHandler</code> instances use a reactive loading pattern, resolving PKI objects on demand. For example, a server-side SSL socket reloads the certificate and private key files on every incoming client connection. This results in redundant disk I/O operations and reduces connection throughput (Connections Per Minute / CPM).</li>
       </ul>
-    
       <h3>How the <code>OSSL_STORE</code> Wrapper Improves Usability and Performance</h3>
       <p>The <code>OSSL_STORE</code> API unifies the loading of various PKI formats into a single, cohesive interface. It can ingest data in single or multiple passes and automatically instantiate native OpenSSL types such as <code>X509</code> (certificates) and <code>EVP_PKEY</code> (private/public keys). Crucially, the same wrappers can be used for in-memory buffers, offering developers unprecedented flexibility.</p>
-      
       <p>TaurusTLS 2.0 leverages these wrappers to support several advanced integration scenarios:</p>
       <ul>
-        <li>
-          <strong>Preloading and Sharing Trusted Certificates:</strong> Trusted certificates can be loaded once and shared across multiple <code>IOHandler</code> instances. This will be exposed via a new <code>Trusted Store</code> component.
-        </li>
-        <li>
-          <strong>Preloaded Server and Client Credentials:</strong> Server-side PKI credentials and client-side certificates can be preloaded into memory, eliminating disk I/O bottlenecks during the TLS handshake.
-        </li>
+        <li><strong>Preloading and Sharing Trusted Certificates:</strong> Trusted certificates can be loaded once and shared across multiple <code>IOHandler</code> instances. This will be exposed via a new <code>Trusted Store</code> component.</li>
+        <li><strong>Preloaded Server and Client Credentials:</strong> Server-side PKI credentials and client-side certificates can be preloaded into memory, eliminating disk I/O bottlenecks during the TLS handshake.</li>
       </ul>
       <p>Both approaches will significantly simplify code maintenance and improve overall runtime performance.</p>
-    
       <h3>Source Code</h3>
       <p>The initial implementation of these <code>OSSL_STORE</code> wrappers is available for review in our <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/blob/TaurusTLS2.0-%40AT/Source/TaurusTLS_SSLStores.pas">Development Branch</a>.</p>
     </article>
@@ -221,6 +205,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#August_15_26_OpenSSL_Installers">OpenSSL Installers Now Available</a>
+        </li>
         <li>
           <a href="#August_12_26_OpenSSL_Now_Code_Signed">OpenSSL Binaries Now Code-Signed</a>
         </li>
