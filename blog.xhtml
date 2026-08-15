@@ -54,6 +54,21 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="August_15_26_OpenSSL_Installers">
+      <h2>OpenSSL Installers Now Available</h2>
+      <p class="post-meta">Published on August 15, 2026 by J. Peter Mugaas</p>
+      <p>We are pleased to announce that official Windows installers for our OpenSSL distribution are <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">now available for download</a>. These installers bundle our pre-compiled libraries for <code>x86</code>, <code>x64</code>, and <code>ARM64EC</code> architectures.</p>
+      <p>To accommodate different deployment scenarios and developer workflows, we have prepared two distinct installer formats:</p>
+      <ul>
+        <li>
+          <strong>Classic Desktop Installer:</strong> A single hybrid executable built with <a href="https://jrsoftware.org/isinfo.php">Inno Setup</a>. It runs seamlessly on both Intel (x86/x64) and ARM64 platforms, automatically detecting the host environment at runtime to deploy the correct architecture-specific binaries.
+        </li>
+        <li>
+          <strong>UWP Sideloading Package:</strong> A modern, multi-architecture <code>.msix</code> package that provides a seamless, one-click installation experience optimized for Universal Windows Platform (UWP) applications.
+        </li>
+      </ul>
+      <p>Both installer packages are fully digitally signed under the name "J. Peter Mugaas" using our Individual Validation (IV) Code Signing Certificate, ensuring secure, tamper-free delivery and a smoother installation process on Windows systems.</p>
+    </article>
     <article id="August_12_26_OpenSSL_Now_Code_Signed">
         <h2>OpenSSL Binaries Now Code-Signed</h2>
         <p class="post-meta">Published on August 12, 2026 by J. Peter Mugaas</p>
