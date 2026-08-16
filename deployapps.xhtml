@@ -59,6 +59,64 @@
     <p><code>TaurusTLS</code> uses <strong>dynamic linking</strong> for the <code>Linux64</code> platform. On Linux, OpenSSL is usually installed by default on the OS. We recommend explicitly documenting this dependency for your end-users. If you choose to deploy a specific version, you can download redistributable Linux package from the <strong><a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">OpenSSL-Distribution Releases</a></strong> and redistribute it with your application(s).</p>
     <h3>Windows</h3>
     <p>On Windows, TaurusTLS uses <strong>Dynamic Linking</strong>. You <strong>must</strong> redistribute the OpenSSL shared libraries (<code>.dll</code>) and the License file alongside your application executable.</p>
+    <p>You can use one of our automated installers.</p>
+    <h4>InnoSetup Multi-Architecture Installer (<code>.exe</code>)</h4>
+    <p>File pattern: <code>openssl-&lt;version&gt;-Windows-installer.exe</code></p>
+    <p>A single, unified setup executable that contains native binaries for x64, x86, and ARM64EC:</p>
+    <ul>
+      <li>
+        <strong>Intelligent CPU Detection</strong>: Automatically detects your processor architecture and installs the matching native binaries:
+        <ul>
+          <li><strong>64-bit Intel/AMD (x64)</strong>: Installs native 64-bit OpenSSL runtime.</li>
+          <li><strong>64-bit ARM64 (Surface / Snapdragon)</strong>: Installs native ARM64EC OpenSSL runtime.</li>
+          <li><strong>32-bit (x86)</strong>: Installs native 32-bit OpenSSL runtime.</li>
+        </ul>
+      </li>
+      <li><strong>32-bit Compatibility Option</strong>: On 64-bit systems, you can check <code>[x] 32-bit (x86) Compatibility Runtime</code> to install 32-bit libraries alongside 64-bit libraries for legacy application compatibility (e.g., 32-bit Delphi/C++ applications).</li>
+      <li>
+        <strong>Installation Modes &amp; Standard Directories</strong>:
+        <ul>
+          <li>Per-Machine (Admin / All Users)
+            <ul>
+              <li>64-bit: <code>C:\Program Files\TaurusTLS Developers\OpenSSL-&lt;version&gt;\</code></li>
+              <li>32-bit: <code>C:\Program Files (x86)\TaurusTLS Developers\OpenSSL-&lt;version&gt;\</code></li>
+            </ul>
+          </li>
+          <li>Per-User (Current User / Non-Admin)
+            <ul>
+              <li>64-bit: <code>%LocalAppData%\Programs\TaurusTLS Developers\OpenSSL-&lt;version&gt;\x64\</code></li>
+              <li>32-bit: <code>%LocalAppData%\Programs\TaurusTLS Developers\OpenSSL-&lt;version&gt;\x86\</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><strong>OpenSSL Command Prompt</strong>: Adds a Start Menu shortcut that launches a command prompt session directly in the OpenSSL installation folder with PATH pre-configured.</li>
+      <li>
+        <strong>Silent / Unattended Installation</strong>:
+        <pre>:: Silent Per-Machine Install (All Users, Default)
+openssl-3.4.0-Windows-installer.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+
+:: Silent Per-User Install (Current User Only)
+openssl-3.4.0-Windows-installer.exe /VERYSILENT /CURRENTUSER /SUPPRESSMSGBOXES /NORESTART</pre>
+      </li>
+    </ul>
+    <h4>MSIX Framework Packages (.msix)</h4>
+    <p>File patterns:</p>
+    <ul>
+        <li><code>openssl-&lt;version>-Windows-x64.msix</code></li>
+        <li><code>openssl-&lt;version>-Windows-x86.msix</code></li>
+        <li><code>openssl-&lt;version>-Windows-arm64ec.msix</code></li>
+    </ul>
+    <p>MSIX Framework packages provide isolated, shared runtime libraries for other Windows applications:</p>
+    <ul>
+        <li>Isolated Deployment: Installs directly to <code>C:\Program Files\WindowsApps\</code> with complete architecture isolation.</li>
+        <li>MSIX App Dependency: Consuming applications can reference OpenSSL in their AppxManifest.xml:<pre>&lt;Dependencies>
+  &lt;PackageDependency Name="TaurusTLS.OpenSSL" MinVersion="3.4.0.0" Publisher="CN=J. Peter Mugaas, O=J. Peter Mugaas, L=Lewisburg, S=wv, C=US" />
+&lt;/Dependencies></pre></li>
+    </ul>
+    <h4>Manually Installing OpenSSL or Directly in You Own Installer</h4>
     <ul>
       <li><strong><a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">Download the OpenSSL Distribution</a>:</strong> Look for the standard packages (e.g., <code>openssl-3.6.1-Windows-x86.zip</code>, <code>openssl-3.6.1-Windows-x64.zip</code>, <code>openssl-3.6.1-Windows-arm64ec.zip</code>).</li>
       <li><strong>Redistribution:</strong> You must ship the following files with your application:</li>
