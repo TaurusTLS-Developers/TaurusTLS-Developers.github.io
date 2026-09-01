@@ -103,6 +103,26 @@ openssl-3.4.0-Windows-installer.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
 openssl-3.4.0-Windows-installer.exe /VERYSILENT /CURRENTUSER /SUPPRESSMSGBOXES /NORESTART</pre>
       </li>
     </ul>
+    <h4 id="MSI_Installer">MSI Installer</h4>
+    <p>File patterns:</p>
+    <ul>
+      <li><code>openssl-&lt;version&gt;-Windows-x64.msi</code></li>
+      <li><code>openssl-&lt;version&gt;-Windows-x86.msi</code></li>
+      <li><code>openssl-&lt;version&gt;-Windows-arm64.msi</code></li>
+    </ul>
+    <p>MSI packages provide isolated, shared runtime libraries for other Windows applications:</p>
+    <ul>
+      <li>Administrative installation with files installed to:
+      <ul>
+        <li>64-bit: <code>C:\Program Files\TaurusTLS Developers\OpenSSL-&lt;version&gt;\</code></li>
+        <li>32-bit: <code>C:\Program Files (x86)\TaurusTLS Developers\OpenSSL-&lt;version&gt;\</code></li>
+      </ul>
+      </li>
+      <li><strong>32-bit Compatibility Option</strong>: On 64-bit systems, you can check <code>[x] 32-bit (x86) Compatibility Runtime</code> to install 32-bit libraries alongside 64-bit libraries for legacy application compatibility (e.g., 32-bit Delphi/C++ applications).</li>
+      <li>The installation directory is added to the system path.</li>
+    </ul>
+    <p>The installer can be silent.  As administrator, <code>msiexec /i openssl-&lt;version&gt;-Windows-&lt;architecture&gt;.msi /qn /norestart</code></p>
+
     <h4 id="MSIX_Framework_Package">MSIX Framework Packages (.msix)</h4>
     <p>File patterns:</p>
     <ul>
