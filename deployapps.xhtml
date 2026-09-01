@@ -103,6 +103,35 @@ openssl-3.4.0-Windows-installer.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
 openssl-3.4.0-Windows-installer.exe /VERYSILENT /CURRENTUSER /SUPPRESSMSGBOXES /NORESTART</pre>
       </li>
     </ul>
+
+    <h4 id="MSI_Installer">MSI Installer (Windows Installer)</h4>
+    <p>Architecture-specific Windows Installer (<code>.msi</code>) packages for standard system-wide and enterprise software deployment:</p>
+    <ul>
+      <li><code>openssl-&lt;version&gt;-Windows-x64.msi</code></li>
+      <li><code>openssl-&lt;version&gt;-Windows-x86.msi</code></li>
+      <li><code>openssl-&lt;version&gt;-Windows-arm64.msi</code></li>
+    </ul>
+    
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li><strong>Administrative Installation:</strong> Deploys binaries to standard system program directories versioned by Major.Minor (allowing different major releases to coexist while patch releases upgrade in-place):
+        <ul>
+          <li>64-bit / ARM64: <code>C:\Program Files\TaurusTLS Developers\OpenSSL-&lt;major.minor&gt;\</code></li>
+          <li>32-bit (x86): <code>C:\Program Files (x86)\TaurusTLS Developers\OpenSSL-&lt;major.minor&gt;\</code></li>
+        </ul>
+      </li>
+      <li><strong>32-bit Compatibility Feature (on x64):</strong> On 64-bit systems, you can select the optional <code>32-bit (x86) Compatibility Runtime</code> feature to install 32-bit libraries into <code>Program Files (x86)</code> for legacy 32-bit applications (e.g. 32-bit Delphi/C++ applications).</li>
+      <li><strong>Configurable PATH:</strong> Adding OpenSSL to the system <code>PATH</code> is provided as an optional sub-feature in the setup tree.</li>
+      <li><strong>Start Menu Command Prompt:</strong> Creates a Start Menu shortcut that launches Command Prompt directly in the installation directory with <code>PATH</code> pre-configured for the active architecture.</li>
+    </ul>
+    
+    <p><strong>Silent &amp; Automated Installation:</strong></p>
+    <p>To deploy silently via command line, scripts, or management tools (run as Administrator):</p>
+    <pre><code>msiexec /i openssl-&lt;version&gt;-Windows-&lt;arch&gt;.msi /qn /norestart</code></pre>
+    
+    <p>To perform a silent install with full verbose logging enabled:</p>
+    <pre><code>msiexec /i openssl-&lt;version&gt;-Windows-&lt;arch&gt;.msi /qn /norestart /l*v "openssl_install.log"</code></pre>
+
     <h4 id="MSI_Installer">MSI Installer</h4>
     <p>File patterns:</p>
     <ul>
