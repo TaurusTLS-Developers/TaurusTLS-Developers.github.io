@@ -63,13 +63,13 @@
     <p>You can use one of our automated installers.</p>
     <h4 id="InnoSetup_Installer"><a href="https://jrsoftware.org/isinfo.php">InnoSetup</a> Multi-Architecture Installer (<code>.exe</code>)</h4>
     <p>File pattern: <code>openssl-&lt;version&gt;-Windows-installer.exe</code></p>
-    <p>A single, unified setup executable that contains native binaries for x64, x86, and ARM64EC:</p>
+    <p>A single, unified setup executable that contains native binaries for x64, x86, and ARM64X:</p>
     <ul>
       <li>
         <strong>Intelligent CPU Detection</strong>: Automatically detects your processor architecture and installs the matching native binaries:
         <ul>
           <li><strong>64-bit Intel/AMD (x64)</strong>: Installs native 64-bit OpenSSL runtime.</li>
-          <li><strong>64-bit ARM64 (Surface / Snapdragon)</strong>: Installs native ARM64EC OpenSSL runtime.</li>
+          <li><strong>64-bit ARM64 (Surface / Snapdragon)</strong>: Installs native ARM64X OpenSSL runtime.</li>
           <li><strong>32-bit (x86)</strong>: Installs native 32-bit OpenSSL runtime.</li>
         </ul>
       </li>
@@ -144,7 +144,7 @@ openssl-3.4.0-Windows-installer.exe /VERYSILENT /CURRENTUSER /SUPPRESSMSGBOXES /
         <td><code>libcrypto-4-x64.dll</code>, <code>libssl-4-x64.dll</code>, <code>LICENSE.txt</code></td>
       </tr>
       <tr>
-        <th scope="row">Windows ARM64EC</th>
+        <th scope="row">Windows ARM64X</th>
         <td><code>libcrypto-3-arm64.dll</code>, <code>libssl-3-arm64.dll</code>, <code>LICENSE.txt</code></td>
         <td><code>libcrypto-4-arm64.dll</code>, <code>libssl-4-arm64.dll</code>, <code>LICENSE.txt</code></td>
       </tr>
