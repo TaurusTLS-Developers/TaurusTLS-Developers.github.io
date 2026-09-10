@@ -53,6 +53,13 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="September_10_26_TaurusTLS_2_0_Client_Socket_Demo">
+      <h2>TaurusTLS 2.0: Client SSL Socket and ECH Demo Available</h2>
+      <p class="post-meta">Published on September 10, 2026 by Alexander Tregubov</p>
+      <p>We have published a console demonstration showcasing the core <strong>TaurusTLS 2.0</strong> Client SSL Socket architecture. This sample illustrates the low-level socket state machine, immutable configuration snapshots (<code>ITaurusTLSSslSocketCtx</code>), and the fluent context builder pattern.</p>
+      <p>The demo covers multiple client operational modes, including direct IP connections (<code>csmDisabled</code>), standard SNI (<code>csmStandardSNI</code>), ECH GREASE anti-ossification (<code>csmECHGrease</code>), dynamic ECH key discovery with automated reconnection (<code>csmECHGreaseDiscovery</code>), and private ECH with suppressed outer SNI (<code>csmECHNoOuter</code>). Native Windows Certificate Store integration (<code>UseSystemCertStore</code>) and custom CA chaining are also demonstrated.</p>
+      <p>While high-level <code>IOHandler</code> integration remains in progress, this sample models the exact lifecycle operations executed under the hood. The demo source code is available in the <code>demos\TaurusTLS_2\HTTPCLi</code> path on the <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/tree/TaurusTLS2.0-%40AT">TaurusTLS2.0-@AT branch</a>.</p>
+    </article>
     <article id="September_10_TaurusTLS_1_0_11_53">
       <h2>TaurusTLS 1.0.11.53</h2>
       <p class="post-meta">Published on September 10, 2026 by J. Peter Mugaas</p>
@@ -263,6 +270,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#September_10_26_TaurusTLS_2_0_Client_Socket_Demo">TaurusTLS 2.0: Client SSL Socket and ECH Demo Available</a>
+        </li>
         <li>
           <a href="#September_10_TaurusTLS_1_0_11_53">TaurusTLS 1.0.11.53</a>
         </li>
