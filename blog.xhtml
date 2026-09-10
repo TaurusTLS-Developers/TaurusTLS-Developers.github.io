@@ -53,18 +53,35 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="September_10_TaurusTLS_1_0_11_53">
+      <h2>TaurusTLS 1.0.11.53</h2>
+      <p class="post-meta">Published on September 10, 2026 by J. Peter Mugaas</p>
+      <p>We are pleased to announce the <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases/tag/1.0.10.52">release of TaurusTLS 1.0.10.52</a>. This maintenance release addresses several bugs, including:</p>
+      <ul>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/258">Issue 258 (Win64 platform missing in D13 packages )</a>
+        </li>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/251">Issue 251 (Strange client issue)</a>
+        </li>
+        <li>
+          <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/271">Issue 271 (Support <code>SSL_CTX_set_ciphersuites</code> )</a>
+        </li>
+      </ul>
+      <p>This release features a new property, <code>CipherSuites</code> that is used to specify the cipher suites you wish to use with <strong>TLS 1.3</strong>. Do not confuse this with the <code>CipherList</code> property which specifies the ciphers you wish to use with <strong>TLS 1.2 or earlier</strong>.</p>
+    </article>
     <article id="September_7_OpenSSL_30_EOL">
       <h2>OpenSSL 3.0 Version Series Reached It's End-Of-Life</h2>
       <p class="post-meta">Published on September 7, 2026 by J. Peter Mugaas</p>
-      <p>OpenSSL 3.0 has reached it's end-of-life (EOL) meaning there will be no further public releases.  We discourage users from continuing to use this version.  You have the following options:</p>
+      <p>OpenSSL 3.0 has reached it's end-of-life (EOL) meaning there will be no further public releases. We discourage users from continuing to use this version. You have the following options:</p>
       <ul>
-          <li><strong>OpenSSL 3.4.x</strong> - This will reach it's end-of-life on October 22, 2026</li>
-          <li><strong>OpenSSL 3.5.x</strong> - This version series has long-term support until April 8, 2030</li>
-          <li><strong>OpenSSL 3.6.x</strong> - This will reach its end of life on November 1, 2026</li>
-          <li><strong>OpenSSL 4.0.x</strong> - This will reach its end-of-life on May 14, 2027</li>
+        <li><strong>OpenSSL 3.4.x</strong> - This will reach it's end-of-life on October 22, 2026</li>
+        <li><strong>OpenSSL 3.5.x</strong> - This version series has long-term support until April 8, 2030</li>
+        <li><strong>OpenSSL 3.6.x</strong> - This will reach its end of life on November 1, 2026</li>
+        <li><strong>OpenSSL 4.0.x</strong> - This will reach its end-of-life on May 14, 2027</li>
       </ul>
       <p>For further information, please consult the <a href="https://openssl-library.org/roadmap/">OpenSSL Roadmap</a>.</p>
-      <p>We recommend that developers upgrade to <strong>OpenSSL 4.0</strong> and eventually to <strong>OpenSSL 4.2</strong> when it is released because OpenSSL 4.2.x will have long-term-support.  The OpenSSL 4.x versions are recommended because <a href="#July_11_26_Announcing_TaurusTLS_2_0">TaurusTLS 2.0</a> will feature <a href="#July_12_26_TaurusTLS_2_0_ECH_Support">Encrypted Client Hello (ECH) including GREASE (Generate Random Extensions And Sustain Extensibility)</a>.</p>
+      <p>We recommend that developers upgrade to <strong>OpenSSL 4.0</strong> and eventually to <strong>OpenSSL 4.2</strong> when it is released because OpenSSL 4.2.x will have long-term-support. The OpenSSL 4.x versions are recommended because <a href="#July_11_26_Announcing_TaurusTLS_2_0">TaurusTLS 2.0</a> will feature <a href="#July_12_26_TaurusTLS_2_0_ECH_Support">Encrypted Client Hello (ECH) including GREASE (Generate Random Extensions And Sustain Extensibility)</a>.</p>
     </article>
     <article id="September_1_MSI_Installer">
       <h2>Announcing Windows MSI Installer Releases for OpenSSL</h2>
@@ -246,6 +263,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#September_10_TaurusTLS_1_0_11_53">TaurusTLS 1.0.11.53</a>
+        </li>
         <li>
           <a href="#September_7_OpenSSL_30_EOL">OpenSSL 3.0 Version Series Reached It's End-Of-Life</a>
         </li>
