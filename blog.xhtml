@@ -58,13 +58,19 @@
         <p class="post-meta">Published on September 23, 2026 by J. Peter Mugaas</p>
         <p>Starting today, TaurusTLS will use <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/279">64-bit <code>TIdC_TIMET</code> (<code>time_t</code>)</a> instead of a 32-bit <code>TIdC_TIMET</code> on 32-bit architectures to be compatible with modern <code>LibC</code> libraries plus OpenSSL 3.x and 4.x.  This is different than Indy which still uses only a 32-bit <code>TIdC_TIMET</code> in <a href="https://www.embarcadero.com/products/rad-studio">RAD Studio</a> when compiling 32-bit programs.  This can cause memory corruption.  This issue has been reported as "<a href="https://github.com/IndySockets/Indy/issues/696">It's time to convert <code>TIdC_TIMET</code> to 64-bit integer on all platforms</a>".</p>
         <p>This issue does not effect <a href="https://www.freepascal.org/">FreePascal</a> because <code>TIdC_TIMET</code> maps directly to <code>time_t</code>.</p>
+    <article id="September_24_OpenSSL_4_1_0beta1_Binaries">
+      <h2>OpenSSL 4.1.0beta1 Binaries Are Released</h2>
+      <p class="post-meta">Published on September 24, 2026 by J. Peter Mugaas</p>
+      <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Alpha 1</strong>.  This is a prerelease from the OpenSSL Developers.</p>
+      <p>Since this version is a prerelease, it will only be available <strong>temporarily</strong> until a new release is made and there is no automated installer for it.</p>
+      <p>We make <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases/tag/v4.1.0-beta1">this version available</a> for users that want to test it.  We do <strong>NOT recommend</strong> using it in production software.</p>
     </article>
     <article id="September_14_OpenSSL_4_1_0alpha1_Binaries">
       <h2>OpenSSL 4.1.0alpha1 Binaries Are Released</h2>
       <p class="post-meta">Published on September 14, 2026 by J. Peter Mugaas</p>
       <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Alpha 1</strong>.  This is a prerelease from the OpenSSL Developers.</p>
       <p>Since this version is a prerelease, it will only be available <strong>temporarily</strong> until a new release is made and there is no automated installer for it.</p>
-      <p>We make <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases/tag/v4.0.2">this version available</a> for users that want to test it.  We do <strong>NOT recommend</strong> using it in production software.</p>
+      <p>We make this version available for users that want to test it.  We do <strong>NOT recommend</strong> using it in production software.</p>
     </article>
     <article id="September_10_26_TaurusTLS_2_0_Client_Socket_Demo">
       <h2>TaurusTLS 2.0: Client SSL Socket and ECH Demo Available</h2>
@@ -285,6 +291,9 @@
       <ul>
         <li>
           <a href="#September_24_TIdC_TIMET"><code>TIdC_TIMET</code> (<code>time_t</code>) will now be 64-bit on 32-bit architectures</a>
+        </li>
+        <li>
+          <a href="#September_24_OpenSSL_4_1_0beta1_Binaries">OpenSSL 4.1.0beta1 Binaries Are Released</a>
         </li>
         <li>
           <a href="#September_14_OpenSSL_4_1_0alpha1_Binaries">OpenSSL 4.1.0alpha1 Binaries Are Released</a>
