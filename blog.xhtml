@@ -53,6 +53,12 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="September_24_TIdC_TIMET">
+        <h2><code>TIdC_TIMET</code> (<code>time_t</code>) will now be 64-bit on 32-bit architectures</h2>
+        <p class="post-meta">Published on September 23, 2026 by J. Peter Mugaas</p>
+        <p>Starting today, TaurusTLS will use <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/279">64-bit <code>TIdC_TIMET</code> (<code>time_t</code>)</a> instead of a 32-bit <code>TIdC_TIMET</code> on 32-bit architectures to be compatible with modern <code>LibC</code> libraries plus OpenSSL 3.x and 4.x.  This is different than Indy which still uses only a 32-bit <code>TIdC_TIMET</code> in <a href="https://www.embarcadero.com/products/rad-studio">RAD Studio</a> when compiling 32-bit programs.  This can cause memory corruption.  This issue has been reported as "<a href="https://github.com/IndySockets/Indy/issues/696">It's time to convert <code>TIdC_TIMET</code> to 64-bit integer on all platforms</a>".</p>
+        <p>This issue does not effect <a href="https://www.freepascal.org/">FreePascal</a> because <code>TIdC_TIMET</code> maps directly to <code>time_t</code>.</p>
+    </article>
     <article id="September_14_OpenSSL_4_1_0alpha1_Binaries">
       <h2>OpenSSL 4.1.0alpha1 Binaries Are Released</h2>
       <p class="post-meta">Published on September 14, 2026 by J. Peter Mugaas</p>
@@ -277,6 +283,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#September_24_TIdC_TIMET"><code>TIdC_TIMET</code> (<code>time_t</code>) will now be 64-bit on 32-bit architectures</a>
+        </li>
         <li>
           <a href="#September_14_OpenSSL_4_1_0alpha1_Binaries">OpenSSL 4.1.0alpha1 Binaries Are Released</a>
         </li>
