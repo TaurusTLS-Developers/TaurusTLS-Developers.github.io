@@ -53,14 +53,16 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
-    <article id="September_24_TIdC_TIMET">
-        <h2><code>TIdC_TIMET</code> (<code>time_t</code>) will now be 64-bit on 32-bit architectures</h2>
-        <p class="post-meta">Published on September 23, 2026 by J. Peter Mugaas</p>
-        <p>Starting today, TaurusTLS will use a <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues/279">64-bit <code>TIdC_TIMET</code> (<code>time_t</code>)</a> on 32-bit architectures instead of a 32-bit integer. This change ensures compatibility with modern <code>libc</code> implementations as well as OpenSSL 3.x and 4.x, which use a 64-bit <code>time_t</code> across all platforms.</p>
-        <p>Unlike TaurusTLS, Indy still uses a 32-bit <code>TIdC_TIMET</code> on 32-bit platforms under Delphi. Passing a 32-bit buffer to OpenSSL functions expecting a 64-bit value causes memory corruption due to buffer overflows. This issue in Indy has been logged as "<a href="https://github.com/IndySockets/Indy/issues/696">It's time to convert <code>TIdC_TIMET</code> to 64-bit integer on all platforms</a>".</p>
-        <p>This issue does not affect <a href="https://www.freepascal.org/">FreePascal</a>, where <code>TIdC_TIMET</code> maps directly to native <code>time_t</code>.</p>
-    </article>
-    <article id="September_24_OpenSSL_4_1_0beta1_Binaries">
+  <article id="September_24_TIdC_TIMET">
+      <h2><code>TOSSL_TIMET</code> (<code>time_t</code>) replaces <code>TIdC_TIMET</code></h2>
+      <p class="post-meta">Published on September 23, 2026 by J. Peter Mugaas</p>
+      <p><strong>Updated on September 25, 2026:</strong> Additional research into the platform-specific <code>time_t</code> ABI has clarified this change.</p>
+      <p>TaurusTLS now uses the TaurusTLS-specific <code>TOSSL_TIMET</code> and <code>POSSL_TIMET</code> types instead of Indy's <code>TIdC_TIMET</code> and <code>PIdC_TIMET</code> for OpenSSL declarations involving <code>time_t</code>.</p>
+      <p>The size of <code>time_t</code> is determined by the target platform and C library ABI and is not necessarily the same as the size of Pascal's or C's other integer types. In particular, <code>time_t</code> can be 64-bit on 32-bit platforms. Using a type with the wrong size can result in an ABI mismatch and potentially cause value truncation, incorrect parameter or return-value handling, or memory corruption.</p>
+      <p><code>TOSSL_TIMET</code> explicitly represents the <code>time_t</code> ABI used by OpenSSL. On 32-bit Linux and Android targets, the <code>OSSL_TIMET_64BIT</code> conditional compilation flag can be used when compiling TaurusTLS against a 64-bit-time C ABI.</p>
+      <p>This change does not intentionally alter the public TaurusTLS API. The previous <code>TIdC_TIMET</code> and <code>PIdC_TIMET</code> types were used only by OpenSSL declarations.</p>
+  </article>
+  <article id="September_24_OpenSSL_4_1_0beta1_Binaries">
       <h2>OpenSSL 4.1.0beta1 Binaries Are Released</h2>
       <p class="post-meta">Published on September 24, 2026 by J. Peter Mugaas</p>
       <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Alpha 1</strong>.  This is a prerelease from the OpenSSL Developers.</p>
