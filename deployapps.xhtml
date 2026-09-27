@@ -178,6 +178,7 @@ openssl-3.4.0-Windows-installer.exe /VERYSILENT /CURRENTUSER /SUPPRESSMSGBOXES /
         <td><code>libcrypto-4-arm64.dll</code>, <code>libssl-4-arm64.dll</code>, <code>LICENSE.txt</code></td>
       </tr>
     </table>
+    <p>If you are using the NTLM (NT Lan Manager) Protocol or legacy algorithms, you need to deploy the <code>providers</code> directory.</p>
     <p><strong>Note:</strong> We strongly recommend also redistributing the <code>openssl.exe</code> included in the package, as users may need it for certificate management tasks like:</p>
     <ul>
       <li>Generate keys</li>

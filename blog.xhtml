@@ -53,7 +53,13 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
-  <article id="September_24_TIdC_TIMET">
+    <article id="September_27_NTLM_Protocol_Enabled">
+      <h2>The NTLM (NT Lan Manager Protocol) has been Enabled</h2>
+       <p class="post-meta">Published on September 27, 2026 by J. Peter Mugaas</p>
+       <p>Thanks to Clayton Arends (zencode1), the NTLM Protocol support is now restored to TaurusTLS.  The NTLM Protocol support in the <code>TaurusTLS_NTLM</code> unit is only provided for inter-operating with legacy systems.</p>
+       <p>However, the NTLM Protocol uses obsolete algorithms, DES and MD4.  In OpenSSL 3.x and 4.x, those algorithms are only available in the legacy provider, <code>legacy</code> located in the <code>providers</code> directory.  To load the legacy provider, use the <code>LoadLegacyProvider</code> method in <code>TaurusTLS</code> unit.  You must also deploy the <code>providers</code> directory from the distribution.</p>
+    </article>
+    <article id="September_24_TIdC_TIMET">
       <h2><code>TOSSL_TIMET</code> (<code>time_t</code>) replaces <code>TIdC_TIMET</code></h2>
       <p class="post-meta">Published on September 23, 2026 by J. Peter Mugaas</p>
       <p><strong>Updated on September 25, 2026:</strong> Additional research into the platform-specific <code>time_t</code> ABI has clarified this change.</p>
@@ -293,6 +299,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+          <a href="#September_27_NTLM_Protocol_Enabled">The NTLM (NT Lan Manager Protocol) has been Enabled</a>
+        </li>
         <li>
           <a href="#September_24_TIdC_TIMET"><code>TOSSL_TIMET</code> (<code>time_t</code>) replaces <code>TIdC_TIMET</code></a>
         </li>
