@@ -53,12 +53,18 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
-  <article id="October_9_OpenSSL_4_1_0beta2_Binaries">
+    <article id="October_15_Dropping_OpenSSL_1_1">
+      <h2>We are dropping all support for OpenSSL 1.1x</h2>
+      <p class="post-meta">Published on October 9, 2026 by J. Peter Mugaas</p>
+      <p>Effectibe now, all support for <strong>OpenSSL 1.1x</strong> will be discontinued. We have been discouraging users from using those old versions of OpenSSL. The OpenSSL 1.1.1 version series reached its of end of life on September 11, 2023 and no further public releases are being made. We have been discouraging you from using those versions for over a year.  We are dropping support because we will now be using an OpenSSL 3 API that is not available in OpenSSL 1.1x.'</p>
+      <p>We encourage all users to use the <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases">latest rerlease versions</a> of OpenSSL because those frequently fix security issues.</p>
+    </article>
+    <article id="October_9_OpenSSL_4_1_0beta2_Binaries">
       <h2>OpenSSL 4.1.0beta2 Binaries Are Released</h2>
       <p class="post-meta">Published on October 9, 2026 by J. Peter Mugaas</p>
-      <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Beta 2</strong>.  This is a prerelease from the OpenSSL Developers.</p>
+      <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Beta 2</strong>. This is a prerelease from the OpenSSL Developers.</p>
       <p>Since this version is a prerelease, it will only be available <strong>temporarily</strong> until a new release is made and there is no automated installer for it.</p>
-      <p>We make <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases/tag/v4.1.0-beta2">this version available</a> for users that want to test it.  We do <strong>NOT recommend</strong> using it in production software.</p>
+      <p>We make <a href="https://github.com/TaurusTLS-Developers/OpenSSL-Distribution/releases/tag/v4.1.0-beta2">this version available</a> for users that want to test it. We do <strong>NOT recommend</strong> using it in production software.</p>
     </article>
     <article id="September_29_OpenSSL_Released">
       <h2>OpenSSL 3.4.8, 3.5.9, 3.6.5, and 3.6.5 Released</h2>
@@ -68,13 +74,13 @@
       <p>As these updates contain important security patches, we highly recommend updating your software distributions with these latest binaries at your earliest convenience to ensure continued security and stability.</p>
     </article>
     <article id="September_27_NTLM_Protocol_Enabled">
-     <h2>NTLM Protocol Support Restored in TaurusTLS</h2>
-     <p class="post-meta">Published on September 27, 2026 by J. Peter Mugaas</p>
-     <p><strong>Updated on October 8, 2026:</strong> Revised for recent changes to source code.</p>
-     <p>Thanks to Clayton Arends (zencode1), NTLM protocol support has been restored to TaurusTLS via the <code>TaurusTLS_NTLM</code> unit. This support is intended solely for interoperability with legacy systems.</p>
-     <p>Because NTLM relies on obsolete cryptographic algorithms like DES and MD4, OpenSSL 3.x and 4.x isolate these routines inside their <code>legacy</code> provider. As a result, components relying on NTLM previously failed to initialize properly under OpenSSL 3.x+ unless the legacy provider was explicitly loaded.</p>
-     <p>TaurusTLS now correctly initializes these legacy hooks upon loading OpenSSL. To enable support in your applications, add the <code>TaurusTLS_LegacyProviders</code> unit to your <code>uses</code> and ensure you deploy the OpenSSL <code>Providers</code> directory alongside your application binary.</p>
-   </article>
+      <h2>NTLM Protocol Support Restored in TaurusTLS</h2>
+      <p class="post-meta">Published on September 27, 2026 by J. Peter Mugaas</p>
+      <p><strong>Updated on October 8, 2026:</strong> Revised for recent changes to source code.</p>
+      <p>Thanks to Clayton Arends (zencode1), NTLM protocol support has been restored to TaurusTLS via the <code>TaurusTLS_NTLM</code> unit. This support is intended solely for interoperability with legacy systems.</p>
+      <p>Because NTLM relies on obsolete cryptographic algorithms like DES and MD4, OpenSSL 3.x and 4.x isolate these routines inside their <code>legacy</code> provider. As a result, components relying on NTLM previously failed to initialize properly under OpenSSL 3.x+ unless the legacy provider was explicitly loaded.</p>
+      <p>TaurusTLS now correctly initializes these legacy hooks upon loading OpenSSL. To enable support in your applications, add the <code>TaurusTLS_LegacyProviders</code> unit to your <code>uses</code> and ensure you deploy the OpenSSL <code>Providers</code> directory alongside your application binary.</p>
+    </article>
     <article id="September_24_TIdC_TIMET">
       <h2><code>TOSSL_TIMET</code> (<code>time_t</code>) replaces <code>TIdC_TIMET</code></h2>
       <p class="post-meta">Published on September 23, 2026 by J. Peter Mugaas</p>
@@ -83,20 +89,20 @@
       <p>The size of <code>time_t</code> is determined by the target platform and C library ABI and is not necessarily the same as the size of Pascal's or C's other integer types. In particular, <code>time_t</code> can be 64-bit on 32-bit platforms. Using a type with the wrong size can result in an ABI mismatch and potentially cause value truncation, incorrect parameter or return-value handling, or memory corruption.</p>
       <p><code>TOSSL_TIMET</code> explicitly represents the <code>time_t</code> ABI used by OpenSSL. On 32-bit Linux and Android targets, the <code>OSSL_TIMET_64BIT</code> conditional compilation flag can be used when compiling TaurusTLS against a 64-bit-time C ABI.</p>
       <p>This change does not intentionally alter the public TaurusTLS API. The previous <code>TIdC_TIMET</code> and <code>PIdC_TIMET</code> types were used only by OpenSSL declarations.</p>
-  </article>
-  <article id="September_24_OpenSSL_4_1_0beta1_Binaries">
+    </article>
+    <article id="September_24_OpenSSL_4_1_0beta1_Binaries">
       <h2>OpenSSL 4.1.0beta1 Binaries Are Released</h2>
       <p class="post-meta">Published on September 24, 2026 by J. Peter Mugaas</p>
-      <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Beta 1</strong>.  This is a prerelease from the OpenSSL Developers.</p>
+      <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Beta 1</strong>. This is a prerelease from the OpenSSL Developers.</p>
       <p>Since this version is a prerelease, it will only be available <strong>temporarily</strong> until a new release is made and there is no automated installer for it.</p>
-      <p>We make this version available for users that want to test it.  We do <strong>NOT recommend</strong> using it in production software.</p>
+      <p>We make this version available for users that want to test it. We do <strong>NOT recommend</strong> using it in production software.</p>
     </article>
     <article id="September_14_OpenSSL_4_1_0alpha1_Binaries">
       <h2>OpenSSL 4.1.0alpha1 Binaries Are Released</h2>
       <p class="post-meta">Published on September 14, 2026 by J. Peter Mugaas</p>
-      <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Alpha 1</strong>.  This is a prerelease from the OpenSSL Developers.</p>
+      <p>We are releasing compiled versions of <strong>OpenSSL 4.1.0 Alpha 1</strong>. This is a prerelease from the OpenSSL Developers.</p>
       <p>Since this version is a prerelease, it will only be available <strong>temporarily</strong> until a new release is made and there is no automated installer for it.</p>
-      <p>We make this version available for users that want to test it.  We do <strong>NOT recommend</strong> using it in production software.</p>
+      <p>We make this version available for users that want to test it. We do <strong>NOT recommend</strong> using it in production software.</p>
     </article>
     <article id="September_10_26_TaurusTLS_2_0_Client_Socket_Demo">
       <h2>TaurusTLS 2.0: Client SSL Socket and ECH Demo Available</h2>
@@ -315,7 +321,12 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
-          <li><a href="#October_9_OpenSSL_4_1_0beta2_Binaries">OpenSSL 4.1.0beta1 Binaries Are Released</a></li>
+        <li>
+          <a href="#October_15_Dropping_OpenSSL_1_1">We are dropping all support for OpenSSL 1.1x</a>
+        </li>
+        <li>
+          <a href="#October_9_OpenSSL_4_1_0beta2_Binaries">OpenSSL 4.1.0beta1 Binaries Are Released</a>
+        </li>
         <li>
           <a href="#September_29_OpenSSL_Released">OpenSSL 3.4.8, 3.5.9, 3.6.5, and 3.6.5 Released</a>
         </li>
