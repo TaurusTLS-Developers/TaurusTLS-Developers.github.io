@@ -55,6 +55,19 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="November_16_26_TaurusTLS_1_1_Beta_4_Released">
+      <h2>TaurusTLS 1.1 Beta 4 Released</h2>
+      <p class="post-meta">November 16, 2026 by Alexander Tregubov</p>
+      <p>TaurusTLS 1.1 Beta 4 is now available for testing. This update improves OpenSSL library loading, cleanup and runtime information:</p>
+      <ul>
+        <li><strong>Matching libraries:</strong> TaurusTLS now requires libcrypto and libssl from the same directory with matching filename suffixes, helping prevent accidental mixing of installations.</li>
+        <li><strong>Better runtime information:</strong> The loader reports the actual library directory, selected suffix and effective configuration filename while loaded. The new <code>VersionNumber</code> property provides the numeric OpenSSL version.</li>
+        <li><strong>Cleanup fixes:</strong> Added the explicit cleanup required when unloading OpenSSL 4 shared libraries and fixed a server IOHandler context leak.</li>
+        <li><strong>Expanded testing:</strong> Added regression coverage for loading, rollback and repeated initialization. All tests passed on Windows, Linux and macOS.</li>
+      </ul>
+      <p>We also revised the <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/blob/TaurusTLS_1_1/Migration_to_1_1.md">migration guide</a> and added a <a href="https://github.com/TaurusTLS-Developers/taurustls_demos/tree/main/Delphi/TaurusFMXDemo">FireMonkey HTTP and FTP demo</a> showing OpenSSL configuration, secure downloads and certificate details.</p>
+      <p>Please test Beta 4 with your applications. We welcome feedback on compatibility, deployment and migration, along with <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues">bug reports</a>, as we prepare the stable release.</p>
+    </article>
     <article id="November_10_26_TaurusTLS_1_1_Beta_3_Released">
       <h2>TaurusTLS 1.1.0.56 Beta 3 Released</h2>
       <p class="post-meta">November 10, 2026 by J. Peter Mugaas</p>
