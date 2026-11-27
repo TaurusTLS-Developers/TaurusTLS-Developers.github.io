@@ -55,6 +55,22 @@
   </header>
   <main id="main">
     <h1>TaurusTLS Developer's Blog</h1>
+    <article id="November_27_26_TaurusTLS_1_1_Released">
+      <h2>TaurusTLS 1.1 Released</h2>
+      <p class="post-meta">November 27, 2026 by Alexander Tregubov</p>
+      <p>We are excited to announce that <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/releases">TaurusTLS 1.1 is now available!</a> Thank you to everyone who tested the beta releases, reported issues and helped prepare this release.</p>
+      <p>Version 1.1 continues our move to modern OpenSSL 3.x and 4.x APIs. It brings application-controlled initialization, configuration-driven FIPS and Legacy-provider integration, clearer runtime diagnostics and improved Delphi/Lazarus design-time support.</p>
+      <p><strong>This release includes breaking changes:</strong></p>
+      <ul>
+        <li><strong>OpenSSL 3.0 or later is required.</strong> Support for OpenSSL 1.1.1 and earlier has been removed.</li>
+        <li><strong>Initialization must be selected explicitly.</strong> Use <code>TTaurusTLSLoader</code> or <code>IOpenSSLLoader</code> before TLS, hashing, HMAC or NTLM operations. For TLS connections, the optional IOHandler <code>AutoLoad</code> property offers an alternative; it defaults to <code>False</code>.</li>
+        <li><strong>TLS preparation happens earlier.</strong> Assigned TLS IOHandlers initialize their contexts even for initially plaintext connections, so loading and configuration errors can occur before STARTTLS.</li>
+        <li><strong>Rebuild dependent packages and applications.</strong> The loader interface has changed; do not mix TaurusTLS 1.0 and 1.1 compiled files.</li>
+      </ul>
+      <p>Please read the <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/blob/TaurusTLS_1_1/Migration_to_1_1.md">1.0-to-1.1 migration guide</a> for upgrade steps, initialization examples, provider configuration and deployment details. The component reference help provides API documentation.</p>
+      <p>Explore the <a href="https://github.com/TaurusTLS-Developers/taurustls_demos">examples repository</a>, including the FireMonkey HTTP/FTP demo; clone TaurusTLS with <code>--recursive</code> to include the demos.</p>
+      <p>We look forward to hearing how TaurusTLS 1.1 works with your applications. Please share your feedback and <a href="https://github.com/TaurusTLS-Developers/TaurusTLS/issues">report any issues</a>.</p>
+    </article>
     <article id="November_18_26_TaurusTLS_1_1_Beta_5_Released">
       <h2>TaurusTLS 1.1.0.58 Beta 5 Released</h2>
       <p class="post-meta">November 18, 2026 by Alexander Tregubov</p>
@@ -399,6 +415,9 @@
     <aside>
       <h2>Recent Posts</h2>
       <ul>
+        <li>
+           <a href="#November_27_26_TaurusTLS_1_1_Released">TaurusTLS 1.1 Released</a>
+        </li>
         <li>
           <a href="#November_18_26_TaurusTLS_1_1_Beta_5_Released">TaurusTLS 1.1.0.58 Beta 5 Released</a>
         </li>
