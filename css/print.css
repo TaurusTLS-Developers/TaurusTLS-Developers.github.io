@@ -38,10 +38,10 @@
 nav,
 footer,
 aside,
-sidebar,
 .skip,
 .no-print,
 .social-share,
+.Blog_TOC,
 .ads {
   display: none !important;
 }
